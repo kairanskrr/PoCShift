@@ -10,7 +10,7 @@ PoCShift is a migration-based PoC generation work that leverages existing PoCs t
 
 This repository contains the **supplementary materials and evaluation artifacts** for our research paper on PoCShift. This repository is intended to support the reproducibility and verification of our research findings.
 
-#### Evaluation
+### Evaluation
 
 Our evaluation dataset and results are available under ``\evaluation`` folder:
 
@@ -18,7 +18,7 @@ Our evaluation dataset and results are available under ``\evaluation`` folder:
 * ``\rq2``: In this folder, we provide execution logs and scripts to conduct the ablative study for PoCShift.
 * ``\rq3``: In this folder, we provide the execution logs for the rest successfully validated vulnerable contracts.
 
-#### Source Code Availability
+### Source Code Availability
 
 Due to ethical considerations, **the complete source code of PoCShift will not be publicly released**. As PoCShift is designed to automatically generate Proof-of-Concept exploits for vulnerable smart contracts, unrestricted public access to the full implementation could potentially facilitate malicious activities and irresponsible vulnerability exploitation. The ``\pocshift`` folder contains a partial implementation for research transparency and reproducibility purposes.
 
