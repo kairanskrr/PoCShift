@@ -94,10 +94,9 @@ PoCShift/
 
 ---
 
-## 📚 Paper & Citation
+## 📚Citation
 
-**Paper**: *Learning from the Past: Real-World Exploit Migration for Smart Contract PoC Generation*  
-**PDF**: [`full_paper/Learning from the Past Real-World Exploit Migration for Smart.pdf`](./full_paper/Learning%20from%20the%20Past%20Real-World%20Exploit%20Migration%20for%20Smart.pdf)
+If you use our work in your research, please kindly cite us as:
 
 ```bibtex
 @article{pocshift2025,
