@@ -113,8 +113,6 @@ If you use our work in your research, please kindly cite us as:
 
 ## 🔐 Ethical Considerations
 
-Due to ethical considerations, **the complete artifact** are not publicly released. The material here focuses on transparency for reviewers and researchers while preventing irresponsible use of automated exploit generation.
+Due to ethical considerations, **the complete artifact** are not publicly released. The material here focuses on transparency for reviewers and researchers while preventing irresponsible use of automated exploit generation. 
 
-If you need the complete artifact, please send us an email (kairan.sun@ntu.edu.sg) with the purpose. Thanks for understanding.
-
-In the email, please include a justification letter (PDF format) on official letterhead. The justification letter needs to acknowledge the "PoCShift" project from Nanyang Technological University and clearly state the reason for requesting the artifacts. Also, confirm that the shared resources **will not be redistributed without our permission**. We emphasize that we will ignore emails that do not follow the above instructions.
+If you need the complete artifact, please send us an email (kairan.sun@ntu.edu.sg) with the purpose. Thanks for understanding. In the email, please include a justification letter (PDF format) on official letterhead. The justification letter needs to acknowledge the "PoCShift" project from Nanyang Technological University and clearly state the reason for requesting the artifacts. Also, confirm that the shared resources **will not be redistributed without our permission**. We emphasize that we will ignore emails that do not follow the above instructions.
