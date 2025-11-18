@@ -1,0 +1,148 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.43s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:390:27:
+    |
+390 |     function transferFrom(address from, address to, uint256 value) external returns (bool) {
+    |                           ^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:390:41:
+    |
+390 |     function transferFrom(address from, address to, uint256 value) external returns (bool) {
+    |                                         ^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:390:53:
+    |
+390 |     function transferFrom(address from, address to, uint256 value) external returns (bool) {
+    |                                                     ^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:395:22:
+    |
+395 |     function approve(address spender, uint256 value) external returns (bool) {
+    |                      ^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:395:39:
+    |
+395 |     function approve(address spender, uint256 value) external returns (bool) {
+    |                                       ^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:399:23:
+    |
+399 |     function transfer(address to, uint256 value) external returns (bool) {
+    |                       ^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:399:35:
+    |
+399 |     function transfer(address to, uint256 value) external returns (bool) {
+    |                                   ^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:403:24:
+    |
+403 |     function balanceOf(address owner) external view returns (uint256) {
+    |                        ^^^^^^^^^^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:395:5:
+    |
+395 |     function approve(address spender, uint256 value) external returns (bool) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:399:5:
+    |
+399 |     function transfer(address to, uint256 value) external returns (bool) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 274708)
+Traces:
+  [274708] ContractTest::test()
+     [7722] 0x27################################84174::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+        [2557] 0xDD################################12226::balanceOf(ContractTest: [0x7F################################e1496]) [delegatecall]
+            [Return] 19805581627 [1.98e10]
+         [Return] 19805581627 [1.98e10]
+     [0] VM::addr(<pk>) [staticcall]
+         [Return] 0x7E################################95Bdf
+     [3222] 0x27################################84174::balanceOf(0x7E################################95Bdf) [staticcall]
+        [2557] 0xDD################################12226::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 0
+         [Return] 0
+     [0] VM::record()
+         [Return] 
+     [1222] 0x27################################84174::balanceOf(0x7E################################95Bdf) [staticcall]
+        [557] 0xDD################################12226::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 0
+         [Return] 0
+     [0] VM::accesses(0x27################################84174)
+         [Return] [0xba################################da3b059a322a8333f533d3f32bf7f, 0x4f################################f3d837fccc21313b89f9d93d20dd1], []
+     [0] VM::load(0x27################################84174, 0x4f################################f3d837fccc21313b89f9d93d20dd1) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     emit WARNING_UninitedSlot(who: 0x27################################84174, slot: 35817769879287085930728750159013002577838177474477770356657388082131029331409 [3.581e76])
+     [0] VM::load(0x27################################84174, 0x4f################################f3d837fccc21313b89f9d93d20dd1) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     [1222] 0x27################################84174::balanceOf(0x7E################################95Bdf) [staticcall]
+        [557] 0xDD################################12226::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 0
+         [Return] 0
+     [0] VM::store(0x27################################84174, 0x4f################################f3d837fccc21313b89f9d93d20dd1, 0xff################################fffffffffffffffffffffffffffff)
+         [Return] 
+     [1222] 0x27################################84174::balanceOf(0x7E################################95Bdf) [staticcall]
+        [557] 0xDD################################12226::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]
+         [Return] 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]
+     [0] VM::store(0x27################################84174, 0x4f################################f3d837fccc21313b89f9d93d20dd1, 0x00################################00000000000000000000000000000)
+         [Return] 
+     emit SlotFound(who: 0x27################################84174, fsig: 0x70a08231, keysHash: 0x4f################################f3d837fccc21313b89f9d93d20dd1, slot: 35817769879287085930728750159013002577838177474477770356657388082131029331409 [3.581e76])
+     [0] VM::load(0x27################################84174, 0x4f################################f3d837fccc21313b89f9d93d20dd1) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     [0] VM::store(0x27################################84174, 0x4f################################f3d837fccc21313b89f9d93d20dd1, 0x00################################00000000000056bc75e2d63100000)
+         [Return] 
+     [1222] 0x27################################84174::balanceOf(0x7E################################95Bdf) [staticcall]
+        [557] 0xDD################################12226::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 100000000000000000000 [1e20]
+         [Return] 100000000000000000000 [1e20]
+     [0] VM::prank(0x7E################################95Bdf)
+         [Return] 
+     [32002] 0x27################################84174::approve(0xb8################################E32D3, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+        [31330] 0xDD################################12226::approve(0xb8################################E32D3, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+           emit Approval(owner: 0x7E################################95Bdf, spender: 0xb8################################E32D3, value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+            [Return] true
+         [Return] true
+      [Revert] EvmError: Revert
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 537.39ms (2.49ms CPU time)
+
+Ran 1 test suite in 539.60ms (537.39ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/RevertFinance_exp.sol/0xb8################################e32d3.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 274708)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

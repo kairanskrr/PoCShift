@@ -1,0 +1,94 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.43s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/TINU_exp.t.sol/0xa1################################2fcea.sol:ContractTest
+[FAIL: revert: Pancake: K] test() (gas: 274543)
+Traces:
+  [274543] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 104850000000000000000 [1.048e20]
+     [149276] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(104850000000000000000 [1.048e20], 0, [0xbb################################c095c, 0xa1################################2FcEa], ContractTest: [0x7F################################e1496], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0xF8################################B3adC, 104850000000000000000 [1.048e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0xF8################################B3adC, value: 104850000000000000000 [1.048e20])
+            [Return] true
+        [12494] 0xa1################################2FcEa::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0xF8################################B3adC::getReserves() [staticcall]
+            [Return] 1075936873392935990382297 [1.075e24], 7714180009016 [7.714e12], 1631560801 [1.631e9]
+        [534] 0xbb################################c095c::balanceOf(0xF8################################B3adC) [staticcall]
+            [Return] 104850007714180009016 [1.048e20]
+        [105644] 0xF8################################B3adC::swap(1075936794034118273675072 [1.075e24], 0, ContractTest: [0x7F################################e1496], 0x)
+           [69304] 0xa1################################2FcEa::transfer(ContractTest: [0x7F################################e1496], 1075936794034118273675072 [1.075e24])
+              emit Transfer(from: 0xF8################################B3adC, to: ContractTest: [0x7F################################e1496], value: 968343114630706446307565 [9.683e23])
+               [Return] true
+           [2494] 0xa1################################2FcEa::balanceOf(0xF8################################B3adC) [staticcall]
+               [Return] 79358817716707225 [7.935e16]
+           [534] 0xbb################################c095c::balanceOf(0xF8################################B3adC) [staticcall]
+               [Return] 104850007714180009016 [1.048e20]
+           emit Sync(reserve0: 79358817716707225 [7.935e16], reserve1: 104850007714180009016 [1.048e20])
+           emit Swap(sender: 0x10################################6024E, amount0In: 0, amount1In: 104850000000000000000 [1.048e20], amount0Out: 1075936794034118273675072 [1.075e24], amount1Out: 0, to: ContractTest: [0x7F################################e1496])
+            [Stop] 
+        [2494] 0xa1################################2FcEa::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 968343114630706446307565 [9.683e23]
+         [Stop] 
+     [2494] 0xa1################################2FcEa::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 968343114630706446307565 [9.683e23]
+     [28698] 0xa1################################2FcEa::deliver(968343114630706446307565 [9.683e23])
+         [Stop] 
+     [49461] 0xF8################################B3adC::skim(ContractTest: [0x7F################################e1496])
+        [2494] 0xa1################################2FcEa::balanceOf(0xF8################################B3adC) [staticcall]
+            [Return] 79366503117389829 [7.936e16]
+        [35704] 0xa1################################2FcEa::transfer(ContractTest: [0x7F################################e1496], 7685400682604 [7.685e12])
+           emit Transfer(from: 0xF8################################B3adC, to: ContractTest: [0x7F################################e1496], value: 6916860614344 [6.916e12])
+            [Return] true
+        [534] 0xbb################################c095c::balanceOf(0xF8################################B3adC) [staticcall]
+            [Return] 104850007714180009016 [1.048e20]
+        [3262] 0xbb################################c095c::transfer(ContractTest: [0x7F################################e1496], 0)
+           emit Transfer(from: 0xF8################################B3adC, to: ContractTest: [0x7F################################e1496], value: 0)
+            [Return] true
+         [Stop] 
+     [2494] 0xa1################################2FcEa::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 6916860614344 [6.916e12]
+     [5998] 0xa1################################2FcEa::deliver(6916860614344 [6.916e12])
+         [Stop] 
+     [534] 0xbb################################c095c::balanceOf(0xF8################################B3adC) [staticcall]
+         [Return] 104850007714180009016 [1.048e20]
+     [14603] 0xF8################################B3adC::swap(0, 104840007714180009016 [1.048e20], ContractTest: [0x7F################################e1496], 0x)
+        [3262] 0xbb################################c095c::transfer(ContractTest: [0x7F################################e1496], 104840007714180009016 [1.048e20])
+           emit Transfer(from: 0xF8################################B3adC, to: ContractTest: [0x7F################################e1496], value: 104840007714180009016 [1.048e20])
+            [Return] true
+        [2494] 0xa1################################2FcEa::balanceOf(0xF8################################B3adC) [staticcall]
+            [Return] 79358817716707279 [7.935e16]
+        [534] 0xbb################################c095c::balanceOf(0xF8################################B3adC) [staticcall]
+            [Return] 10000000000000000 [1e16]
+         [Revert] revert: Pancake: K
+      [Revert] revert: Pancake: K
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.85s (1.11s CPU time)
+
+Ran 1 test suite in 1.87s (1.85s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/TINU_exp.t.sol/0xa1################################2fcea.sol:ContractTest
+[FAIL: revert: Pancake: K] test() (gas: 274543)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

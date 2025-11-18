@@ -1,0 +1,86 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.44s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/MBC_ZZSH_exp.sol/0x1c################################aa850.sol:ContractTest
+[FAIL: revert: TransferHelper: TRANSFER_FROM_FAILED] test() (gas: 472353)
+Traces:
+  [472353] ContractTest::test()
+     [2531] 0x55################################97955::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 305930678886576313270614 [3.059e23]
+     [9651] 0x10################################6024E::getAmountsOut(150000000000000000000000 [1.5e23], [0x55################################97955, 0x1C################################AA850]) [staticcall]
+        [2893] 0xD0################################2408F::getReserves() [staticcall]
+            [Return] 3356464626893942163998 [3.356e21], 26691860949429116768 [2.669e19], 1668033020 [1.668e9]
+         [Return] [150000000000000000000000 [1.5e23], 3355865968195275566769 [3.355e21]]
+     [10871] 0x55################################97955::transfer(0xD0################################2408F, 150000000000000000000000 [1.5e23])
+        emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0xD0################################2408F, value: 150000000000000000000000 [1.5e23])
+         [Return] true
+     [393042] 0xD0################################2408F::swap(3355865968195275566769 [3.355e21], 0, ContractTest: [0x7F################################e1496], 0x)
+        [355772] 0x1C################################AA850::transfer(ContractTest: [0x7F################################e1496], 3355865968195275566769 [3.355e21])
+           [2796] 0x24################################978A9::warpToken(3355865968195275566769 [3.355e21]) [staticcall]
+               [Return] 0x00################################00000000000b5ebfeedef05bbaeb1
+           emit Transfer(from: 0xD0################################2408F, to: 0x52################################86fc1, value: 100675979045858267001 [1.006e20])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################E1097, value: 3355865968195275 [3.355e15])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################eD290, value: 3050787243813886 [3.05e15])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################d4624, value: 2796554973496062 [2.796e15])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################FB915, value: 2581435360150211 [2.581e15])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################36C26, value: 2397047120139482 [2.397e15])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################3c61C, value: 2237243978796850 [2.237e15])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################23E24, value: 2097416230122047 [2.097e15])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################cB4Fb, value: 1974038804820750 [1.974e15])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################046E4, value: 1864369982330708 [1.864e15])
+           emit Transfer(from: 0x1C################################AA850, to: 0x00################################335dB, value: 1766245246418566 [1.766e15])
+           emit Transfer(from: 0xD0################################2408F, to: ContractTest: [0x7F################################e1496], value: 3255189989149417299699 [3.255e21])
+            [Return] true
+        [930] 0x1C################################AA850::balanceOf(0xD0################################2408F) [staticcall]
+            [Return] 598658698666597298 [5.986e17]
+        [531] 0x55################################97955::balanceOf(0xD0################################2408F) [staticcall]
+            [Return] 150026691860949429116768 [1.5e23]
+        emit Sync(reserve0: 598658698666597298 [5.986e17], reserve1: 150026691860949429116768 [1.5e23])
+        emit Swap(sender: ContractTest: [0x7F################################e1496], amount0In: 69, amount1In: 150000000000000000000000 [1.5e23], amount0Out: 3355865968195275566769 [3.355e21], amount1Out: 0, to: ContractTest: [0x7F################################e1496])
+         [Stop] 
+     [38797] 0x1C################################AA850::swapAndLiquifyStepv1()
+        [2531] 0x55################################97955::balanceOf(0x1C################################AA850) [staticcall]
+            [Return] 1
+        [26933] 0x10################################6024E::addLiquidity(0x55################################97955, 0x1C################################AA850, 1, 8044060251369514183 [8.044e18], 0, 0, 0x89################################F8F65, 1669726874 [1.669e9])
+           [2676] 0xcA################################50c73::getPair(0x55################################97955, 0x1C################################AA850) [staticcall]
+               [Return] 0xD0################################2408F
+           [893] 0xD0################################2408F::getReserves() [staticcall]
+               [Return] 598658698666597298 [5.986e17], 150026691860949429116768 [1.5e23], 1669726874 [1.669e9]
+           [13634] 0x55################################97955::transferFrom(0x1C################################AA850, 0xD0################################2408F, 1)
+              emit Transfer(from: 0x1C################################AA850, to: 0xD0################################2408F, value: 1)
+              emit Approval(owner: 0x1C################################AA850, spender: 0x10################################6024E, value: 19999795226867150282612728 [1.999e25])
+               [Return] true
+           [1098] 0x1C################################AA850::transferFrom(0x1C################################AA850, 0xD0################################2408F, 0)
+               [Revert] EvmError: Revert
+            [Revert] revert: TransferHelper: TRANSFER_FROM_FAILED
+         [Revert] revert: TransferHelper: TRANSFER_FROM_FAILED
+      [Revert] revert: TransferHelper: TRANSFER_FROM_FAILED
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 573.82ms (3.85ms CPU time)
+
+Ran 1 test suite in 1.36s (573.82ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/MBC_ZZSH_exp.sol/0x1c################################aa850.sol:ContractTest
+[FAIL: revert: TransferHelper: TRANSFER_FROM_FAILED] test() (gas: 472353)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

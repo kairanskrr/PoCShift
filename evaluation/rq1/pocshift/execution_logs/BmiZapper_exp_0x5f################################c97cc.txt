@@ -1,0 +1,101 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.43s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/BmiZapper_exp.sol/0x5f################################c97cc.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 318982)
+Traces:
+  [318982] ContractTest::test()
+     [9839] 0xA0################################6eB48::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+        [2553] 0x43################################402dd::balanceOf(ContractTest: [0x7F################################e1496]) [delegatecall]
+            [Return] 114146247097 [1.141e11]
+         [Return] 114146247097 [1.141e11]
+     [0] VM::addr(<pk>) [staticcall]
+         [Return] 0x7E################################95Bdf
+     [3339] 0xA0################################6eB48::balanceOf(0x7E################################95Bdf) [staticcall]
+        [2553] 0x43################################402dd::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 0
+         [Return] 0
+     [0] VM::record()
+         [Return] 
+     [1339] 0xA0################################6eB48::balanceOf(0x7E################################95Bdf) [staticcall]
+        [553] 0x43################################402dd::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 0
+         [Return] 0
+     [0] VM::accesses(0xA0################################6eB48)
+         [Return] [0x10################################522237ea5c60d11bc4e7a1ff9390b, 0x70################################f8e2c036e5a723fd8ee048ed3f8c3, 0xd3################################85ef83ef6921ca3a8d83a154df3ce], []
+     [0] VM::load(0xA0################################6eB48, 0xd3################################85ef83ef6921ca3a8d83a154df3ce) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     emit WARNING_UninitedSlot(who: 0xA0################################6eB48, slot: 95494527589725382648221575772034697587090647130919524134099231156690049954766 [9.549e76])
+     [0] VM::load(0xA0################################6eB48, 0xd3################################85ef83ef6921ca3a8d83a154df3ce) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     [1339] 0xA0################################6eB48::balanceOf(0x7E################################95Bdf) [staticcall]
+        [553] 0x43################################402dd::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 0
+         [Return] 0
+     [0] VM::store(0xA0################################6eB48, 0xd3################################85ef83ef6921ca3a8d83a154df3ce, 0xff################################fffffffffffffffffffffffffffff)
+         [Return] 
+     [1339] 0xA0################################6eB48::balanceOf(0x7E################################95Bdf) [staticcall]
+        [553] 0x43################################402dd::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 57896044618658097711785492504343953926634992332820282019728792003956564819967 [5.789e76]
+         [Return] 57896044618658097711785492504343953926634992332820282019728792003956564819967 [5.789e76]
+     [0] VM::store(0xA0################################6eB48, 0xd3################################85ef83ef6921ca3a8d83a154df3ce, 0x00################################00000000000000000000000000000)
+         [Return] 
+     emit SlotFound(who: 0xA0################################6eB48, fsig: 0x70a08231, keysHash: 0x4f################################f3d837fccc21313b89f9d93d20dd1, slot: 95494527589725382648221575772034697587090647130919524134099231156690049954766 [9.549e76])
+     [0] VM::load(0xA0################################6eB48, 0xd3################################85ef83ef6921ca3a8d83a154df3ce) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     [0] VM::store(0xA0################################6eB48, 0xd3################################85ef83ef6921ca3a8d83a154df3ce, 0x00################################000000000152d02c7e14af6800000)
+         [Return] 
+     [1339] 0xA0################################6eB48::balanceOf(0x7E################################95Bdf) [staticcall]
+        [553] 0x43################################402dd::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 100000000000000000000000 [1e23]
+         [Return] 100000000000000000000000 [1e23]
+     [0] VM::prank(0x7E################################95Bdf)
+         [Return] 
+     [38445] 0x4F################################C7C53::approve(0x5f################################C97CC, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+        [31163] 0x2A################################91015::approve(0x5f################################C97CC, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+           emit Approval(owner: 0x7E################################95Bdf, spender: 0x5f################################C97CC, value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+            [Return] true
+         [Return] true
+     [0] VM::prank(0x7E################################95Bdf)
+         [Return] 
+     [27462] 0xA0################################6eB48::approve(0x5f################################C97CC, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+        [26673] 0x43################################402dd::approve(0x5f################################C97CC, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]) [delegatecall]
+           emit Approval(owner: 0x7E################################95Bdf, spender: 0x5f################################C97CC, value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+            [Return] true
+         [Return] true
+     [1339] 0xA0################################6eB48::balanceOf(0x7E################################95Bdf) [staticcall]
+        [553] 0x43################################402dd::balanceOf(0x7E################################95Bdf) [delegatecall]
+            [Return] 100000000000000000000000 [1e23]
+         [Return] 100000000000000000000000 [1e23]
+     [203] 0x5f################################C97CC::zapToBMI(0x4F################################C7C53, 0, 0x00################################00000, 0, 0, [], [1000000000000000000 [1e18]], 0xA0################################6eB48, 0x23################################f4552091a69125d5dfcb7b8c2659029395bdf0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e149600000000000000000000000000000000000000000000152d02c7e14af6800000, true)
+         [Revert] EvmError: Revert
+      [Revert] EvmError: Revert
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.12s (250.49ms CPU time)
+
+Ran 1 test suite in 1.13s (1.12s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/BmiZapper_exp.sol/0x5f################################c97cc.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 318982)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

@@ -1,0 +1,52 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.45s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/OLIFE_exp.sol/0x4F################################e8260.sol:ContractTest
+[FAIL: revert: PancakeLibrary: INSUFFICIENT_LIQUIDITY] test() (gas: 70848)
+Traces:
+  [70848] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 969000000000000000000 [9.69e20]
+     [534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 969000000000000000000 [9.69e20]
+     [54067] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(969000000000000000000 [9.69e20], 0, [0xbb################################c095c, 0x4F################################e8260], ContractTest: [0x7F################################e1496], 1681866278 [1.681e9])
+        [30125] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0xD3################################f5660, 969000000000000000000 [9.69e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0xD3################################f5660, value: 969000000000000000000 [9.69e20])
+            [Return] true
+        [10257] 0x4F################################e8260::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0xD3################################f5660::getReserves() [staticcall]
+            [Return] 0, 0, 0
+        [534] 0xbb################################c095c::balanceOf(0xD3################################f5660) [staticcall]
+            [Return] 969000000000000000000 [9.69e20]
+         [Revert] revert: PancakeLibrary: INSUFFICIENT_LIQUIDITY
+      [Revert] revert: PancakeLibrary: INSUFFICIENT_LIQUIDITY
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.04s (567.87s CPU time)
+
+Ran 1 test suite in 4.15s (1.04s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/OLIFE_exp.sol/0x4F################################e8260.sol:ContractTest
+[FAIL: revert: PancakeLibrary: INSUFFICIENT_LIQUIDITY] test() (gas: 70848)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

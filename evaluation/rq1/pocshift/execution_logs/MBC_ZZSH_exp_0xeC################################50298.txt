@@ -1,0 +1,48 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.46s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/MBC_ZZSH_exp.sol/0xeC################################50298.sol:ContractTest
+[FAIL: revert: Pancake: INSUFFICIENT_LIQUIDITY] test() (gas: 46298)
+Traces:
+  [46298] ContractTest::test()
+     [2531] 0x55################################97955::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 305930678886576313270614 [3.059e23]
+     [9611] 0x10################################6024E::getAmountsOut(150000000000000000000000 [1.5e23], [0x55################################97955, 0xeC################################50298]) [staticcall]
+        [2893] 0x45################################94D84::getReserves() [staticcall]
+            [Return] 14711571507440524623 [1.471e19], 51899857762576977622914442980 [5.189e28], 1659347628 [1.659e9]
+         [Return] [150000000000000000000000 [1.5e23], 51894755317105240125050678009 [5.189e28]]
+     [10871] 0x55################################97955::transfer(0x45################################94D84, 150000000000000000000000 [1.5e23])
+        emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x45################################94D84, value: 150000000000000000000000 [1.5e23])
+         [Return] true
+     [6317] 0x45################################94D84::swap(51894755317105240125050678009 [5.189e28], 0, ContractTest: [0x7F################################e1496], 0x)
+         [Revert] revert: Pancake: INSUFFICIENT_LIQUIDITY
+      [Revert] revert: Pancake: INSUFFICIENT_LIQUIDITY
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 499.71ms (860.94s CPU time)
+
+Ran 1 test suite in 510.05ms (499.71ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/MBC_ZZSH_exp.sol/0xeC################################50298.sol:ContractTest
+[FAIL: revert: Pancake: INSUFFICIENT_LIQUIDITY] test() (gas: 46298)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

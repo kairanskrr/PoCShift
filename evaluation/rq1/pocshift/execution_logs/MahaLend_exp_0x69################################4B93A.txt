@@ -1,0 +1,69 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.47s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2072): Unused local variable.
+   --> src/migration_result_test2/MahaLend_exp.sol/0x69################################4B93A.sol:400:3:
+    |
+400 | 		uint preCheck = READADDRESS1.balanceOf(address(this));
+    | 		^^^^^^^^^^^^^
+
+Warning (2072): Unused local variable.
+   --> src/migration_result_test2/MahaLend_exp.sol/0x69################################4B93A.sol:414:9:
+    |
+414 |         uint postCheck = READADDRESS1.balanceOf(address(this));
+    |         ^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/MahaLend_exp.sol/0x69################################4B93A.sol:419:9:
+    |
+419 |         address[] calldata asset,
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/MahaLend_exp.sol/0x69################################4B93A.sol:421:9:
+    |
+421 |         uint256[] calldata premium,
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/MahaLend_exp.sol/0x69################################4B93A.sol:422:9:
+    |
+422 |         address initiator,
+    |         ^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/MahaLend_exp.sol/0x69################################4B93A.sol:423:9:
+    |
+423 |         bytes calldata params
+    |         ^^^^^^^^^^^^^^^^^^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/MahaLend_exp.sol/0x69################################4B93A.sol:ContractTest
+[FAIL: EvmError: Revert] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 702.61ms (0.00ns CPU time)
+
+Ran 1 test suite in 718.28ms (702.61ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/MahaLend_exp.sol/0x69################################4B93A.sol:ContractTest
+[FAIL: EvmError: Revert] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

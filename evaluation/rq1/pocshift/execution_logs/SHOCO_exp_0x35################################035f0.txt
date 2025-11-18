@@ -1,0 +1,53 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.45s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/migration_result_test2/SHOCO_exp.sol/0x35################################035f0.sol:386:5:
+    |
+386 |     function getMappingValue(address targetContract, uint256 mapSlot, address key) public returns (uint256) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/SHOCO_exp.sol/0x35################################035f0.sol:ContractTest
+[FAIL: panic: arithmetic underflow or overflow (0x11)] test() (gas: 30405)
+Traces:
+  [30405] ContractTest::test()
+     [2534] 0xC0################################56Cc2::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 2000000000000000000000 [2e21]
+     [0] VM::load(0x35################################035f0, 0x00################################0000000000000000000000000000e) [staticcall]
+         [Return] 0x54################################00000000000000000000000000008
+     [0] VM::load(0x35################################035f0, 0xf3################################96cb939159675b0672bf6f1e926ea) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     [7899] 0x35################################035f0::tokenFromReflection(38116766838046388799548576820292817444707840134862549419049577482699522703368 [3.811e76]) [staticcall]
+         [Return] 329182823188602924346 [3.291e20]
+     [2504] 0x06################################9fE08::getReserves() [staticcall]
+         [Return] 313107 [3.131e5], 4, 1657099408 [1.657e9]
+      [Revert] panic: arithmetic underflow or overflow (0x11)
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 614.88ms (635.96s CPU time)
+
+Ran 1 test suite in 1.55s (614.88ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/SHOCO_exp.sol/0x35################################035f0.sol:ContractTest
+[FAIL: panic: arithmetic underflow or overflow (0x11)] test() (gas: 30405)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

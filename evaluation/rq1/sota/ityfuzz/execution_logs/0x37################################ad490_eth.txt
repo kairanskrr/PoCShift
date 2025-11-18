@@ -1,0 +1,78 @@
+[32m INFO[0m fetching abi from https://api.etherscan.io/api?module=contract&action=getabi&address=0x37################################ad490&format=json&apikey=GS896CZ6PQ13S3HGE6FRK1Z9DYCZFWF2RC
+[32m INFO[0m fetching code from 373ce6da1aeb73a9bca412f2d3b7ed07af3ad490
+Contract loaded: 0x37################################ad490
+[32m INFO[0m 
+
+ ================ EVM Fuzzer Start ===================
+
+
+[32m INFO[0m Deploying contract: 0x37################################ad490
+[32m INFO[0m Contract 0x37################################ad490 deployed to: 0x37################################ad490 -> balacne is 0
+[32m INFO[0m Deployed all contracts
+
+[32m INFO[0m fetching code from 35c9dfd76bf02107ff4f7128bd69716612d31ddb
+[32m INFO[0m fetching code from 0000000000000000000000000000000000000000
+[32m INFO[0m [Stats #0] run time: 0h-0m-0s, clients: 1, corpus: 0, objectives: 0, executions: 0, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x37################################AD490.receive(0xffffffffff00000000ffffffff)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-0s, clients: 1, corpus: 4, objectives: 0, executions: 1, exec/sec: 0.000
+[32m INFO[0m fetching code from e1a425f1ac34a8a441566f93c82dd730639c8510
+[32m INFO[0m [Stats #0] run time: 0h-0m-0s, clients: 1, corpus: 4, objectives: 0, executions: 1, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x37################################AD490.receive{value: 4394.9743 ether}("")
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-0s, clients: 1, corpus: 5, objectives: 0, executions: 3, exec/sec: 0.000
+[32m INFO[0m fetching code from 8ef508aca04b32ff3ba5003177cb18bfa6cd79dd
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x37################################ad490: 52.37% Instruction Covered, 40.00% Branch Covered
+[32m INFO[0m fetching code from 68dd4f5ac792eaaa5e36f4f4e0474e0625dc9024
+[32m INFO[0m [Stats #0] run time: 0h-0m-1s, clients: 1, corpus: 5, objectives: 0, executions: 3, exec/sec: 2.653
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x37################################AD490.__InitializableProductProxy_init{value: 1197.6176 ether}(0x68################################c9024, 0x00################################ff7fffffffff80007fffffff80775, 0x40################################c42c0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-1s, clients: 1, corpus: 6, objectives: 0, executions: 33, exec/sec: 29.15
+[32m INFO[0m [Stats #0] run time: 0h-0m-1s, clients: 1, corpus: 6, objectives: 0, executions: 33, exec/sec: 29.15
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x37################################AD490.__InitializableProductProxy_init(0x68################################c9024, 0x00################################00000000000000000000000000000, "")
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-1s, clients: 1, corpus: 7, objectives: 0, executions: 34, exec/sec: 30.01
+[32m INFO[0m [Stats #0] run time: 0h-0m-1s, clients: 1, corpus: 7, objectives: 0, executions: 34, exec/sec: 30.00
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x37################################AD490.__InitializableProductProxy_init{value: 1197.6176 ether}(0x68################################c9024, 0x00################################ff7fffffffff80007fffffff80775, 0x40################################c42c0)
+       [3] 0x37################################AD490.receive0xe1################################c8510()
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-1s, clients: 1, corpus: 8, objectives: 0, executions: 35, exec/sec: 30.86
+[32m INFO[0m [Stats #0] run time: 0h-0m-1s, clients: 1, corpus: 8, objectives: 0, executions: 35, exec/sec: 30.85
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x37################################AD490.__InitializableProductProxy_init{value: 1197.6176 ether}(0x68################################c9024, 0x00################################ff7fffffffff80007fffffff80775, 0x40################################c42c0)
+       [3] 0x37################################AD490.receive()
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-1s, clients: 1, corpus: 9, objectives: 0, executions: 36, exec/sec: 31.62
+
+thread 'main' has overflowed its stack
+fatal runtime error: stack overflow

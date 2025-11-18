@@ -1,0 +1,231 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.25s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:352:22:
+    |
+352 |     function approve(address spender, uint256 amount) external returns (bool) {
+    |                      ^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:352:39:
+    |
+352 |     function approve(address spender, uint256 amount) external returns (bool) {
+    |                                       ^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:356:25:
+    |
+356 |     function createPair(address tokenA, address tokenB) external returns (address) {
+    |                         ^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:356:41:
+    |
+356 |     function createPair(address tokenA, address tokenB) external returns (address) {
+    |                                         ^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:361:9:
+    |
+361 |         address token,
+    |         ^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:362:9:
+    |
+362 |         uint256 amountTokenDesired,
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:363:9:
+    |
+363 |         uint256 amountTokenMin,
+    |         ^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:364:9:
+    |
+364 |         uint256 amountETHMin,
+    |         ^^^^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:365:9:
+    |
+365 |         address to,
+    |         ^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:366:9:
+    |
+366 |         uint256 deadline
+    |         ^^^^^^^^^^^^^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:352:5:
+    |
+352 |     function approve(address spender, uint256 amount) external returns (bool) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:356:5:
+    |
+356 |     function createPair(address tokenA, address tokenB) external returns (address) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:360:5:
+    |
+360 |     function addLiquidityETH(
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:ContractTest
+[FAIL: revert: Postcondition failed] test() (gas: 337129)
+Traces:
+  [337129] ContractTest::test()
+     [2534] 0xC0################################56Cc2::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 0
+     [151848] 0x7a################################2488D::swapExactETHForTokens{value: 100000000000000000}(0, [0xC0################################56Cc2, 0x9f################################e8F21], ContractTest: [0x7F################################e1496], 1686049683 [1.686e9])
+        [2504] 0xE7################################E06Eb::getReserves() [staticcall]
+            [Return] 1000552454492471349700 [1e21], 4418553928432512 [4.418e15], 1686033443 [1.686e9]
+        [23974] 0xC0################################56Cc2::deposit{value: 100000000000000000}()
+           emit Deposit(param0: 0x7a################################2488D, param1: 100000000000000000 [1e17])
+            [Stop] 
+        [8062] 0xC0################################56Cc2::transfer(0xE7################################E06Eb, 100000000000000000 [1e17])
+           emit Transfer(from: 0x7a################################2488D, to: 0xE7################################E06Eb, value: 100000000000000000 [1e17])
+            [Return] true
+        [100543] 0xE7################################E06Eb::swap(958091290640355805468 [9.58e20], 0, ContractTest: [0x7F################################e1496], 0x)
+           [65588] 0x9f################################e8F21::transfer(ContractTest: [0x7F################################e1496], 958091290640355805468 [9.58e20])
+              [27477] 0xBd################################dC761::swapExactTokensForETHSupportingFeeOnTransferTokens(0xE7################################E06Eb, ContractTest: [0x7F################################e1496], 958091290640355805468 [9.58e20])
+                  [Return] 0x00################################00000000000000000000000000001000000000000000000000000000000000000000000000033f03008a6f5f1c91c000000000000000000000000000000000000000000000033f03008a6f5f1c91c
+              emit Transfer(from: 0xE7################################E06Eb, to: ContractTest: [0x7F################################e1496], value: 958091290640355805468 [9.58e20])
+               [Return] true
+           [598] 0x9f################################e8F21::balanceOf(0xE7################################E06Eb) [staticcall]
+               [Return] 42461163852115544232 [4.246e19]
+           [534] 0xC0################################56Cc2::balanceOf(0xE7################################E06Eb) [staticcall]
+               [Return] 104418553928432512 [1.044e17]
+           emit Sync(reserve0: 42461163852115544232 [4.246e19], reserve1: 104418553928432512 [1.044e17])
+           emit Swap(sender: 0x7a################################2488D, amount0In: 0, amount1In: 100000000000000000 [1e17], amount0Out: 958091290640355805468 [9.58e20], amount1Out: 0, to: ContractTest: [0x7F################################e1496])
+            [Stop] 
+         [Return] [100000000000000000 [1e17], 958091290640355805468 [9.58e20]]
+     [60763] 0x9f################################e8F21::addLiquidityETH(Router: [0x56################################3b72f], ContractTest: [0x7F################################e1496], 0xE7################################E06Eb)
+        emit Transfer(from: 0xE7################################E06Eb, to: 0x9f################################e8F21, value: 33968931081692435385 [3.396e19])
+        emit Approval(owner: 0x9f################################e8F21, spender: Router: [0x56################################3b72f], value: 1000000000000000000 [1e18])
+        [233] Router::factory() [staticcall]
+            [Return] Router: [0x56################################3b72f]
+        [2318] Router::WETH() [staticcall]
+            [Return] 0xC0################################56Cc2
+        [523] Router::createPair(0x9f################################e8F21, 0xC0################################56Cc2)
+            [Return] Router: [0x56################################3b72f]
+        [678] Router::addLiquidityETH(0x9f################################e8F21, 33968931081692435385 [3.396e19], 0, 0, ContractTest: [0x7F################################e1496], 1686049583 [1.686e9])
+            [Return] 0, 0, 0
+        [351] Router::approve(Router: [0x56################################3b72f], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+            [Return] true
+         [Stop] 
+     [10263] 0x9f################################e8F21::addLiquidityETH(Router: [0x56################################3b72f], ContractTest: [0x7F################################e1496], 0xE7################################E06Eb)
+        emit Transfer(from: 0xE7################################E06Eb, to: 0x9f################################e8F21, value: 6793786216338487077 [6.793e18])
+        emit Approval(owner: 0x9f################################e8F21, spender: Router: [0x56################################3b72f], value: 1000000000000000000 [1e18])
+        [233] Router::factory() [staticcall]
+            [Return] Router: [0x56################################3b72f]
+        [318] Router::WETH() [staticcall]
+            [Return] 0xC0################################56Cc2
+        [523] Router::createPair(0x9f################################e8F21, 0xC0################################56Cc2)
+            [Return] Router: [0x56################################3b72f]
+        [678] Router::addLiquidityETH(0x9f################################e8F21, 6793786216338487077 [6.793e18], 0, 0, ContractTest: [0x7F################################e1496], 1686049583 [1.686e9])
+            [Return] 0, 0, 0
+        [351] Router::approve(Router: [0x56################################3b72f], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+            [Return] true
+         [Stop] 
+     [10263] 0x9f################################e8F21::addLiquidityETH(Router: [0x56################################3b72f], ContractTest: [0x7F################################e1496], 0xE7################################E06Eb)
+        emit Transfer(from: 0xE7################################E06Eb, to: 0x9f################################e8F21, value: 1358757243267697416 [1.358e18])
+        emit Approval(owner: 0x9f################################e8F21, spender: Router: [0x56################################3b72f], value: 1000000000000000000 [1e18])
+        [233] Router::factory() [staticcall]
+            [Return] Router: [0x56################################3b72f]
+        [318] Router::WETH() [staticcall]
+            [Return] 0xC0################################56Cc2
+        [523] Router::createPair(0x9f################################e8F21, 0xC0################################56Cc2)
+            [Return] Router: [0x56################################3b72f]
+        [678] Router::addLiquidityETH(0x9f################################e8F21, 1358757243267697416 [1.358e18], 0, 0, ContractTest: [0x7F################################e1496], 1686049583 [1.686e9])
+            [Return] 0, 0, 0
+        [351] Router::approve(Router: [0x56################################3b72f], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+            [Return] true
+         [Stop] 
+     [10263] 0x9f################################e8F21::addLiquidityETH(Router: [0x56################################3b72f], ContractTest: [0x7F################################e1496], 0xE7################################E06Eb)
+        emit Transfer(from: 0xE7################################E06Eb, to: 0x9f################################e8F21, value: 271751448653539483 [2.717e17])
+        emit Approval(owner: 0x9f################################e8F21, spender: Router: [0x56################################3b72f], value: 1000000000000000000 [1e18])
+        [233] Router::factory() [staticcall]
+            [Return] Router: [0x56################################3b72f]
+        [318] Router::WETH() [staticcall]
+            [Return] 0xC0################################56Cc2
+        [523] Router::createPair(0x9f################################e8F21, 0xC0################################56Cc2)
+            [Return] Router: [0x56################################3b72f]
+        [678] Router::addLiquidityETH(0x9f################################e8F21, 271751448653539483 [2.717e17], 0, 0, ContractTest: [0x7F################################e1496], 1686049583 [1.686e9])
+            [Return] 0, 0, 0
+        [351] Router::approve(Router: [0x56################################3b72f], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+            [Return] true
+         [Stop] 
+     [7650] 0xE7################################E06Eb::sync()
+        [598] 0x9f################################e8F21::balanceOf(0xE7################################E06Eb) [staticcall]
+            [Return] 67937862163384871 [6.793e16]
+        [534] 0xC0################################56Cc2::balanceOf(0xE7################################E06Eb) [staticcall]
+            [Return] 104418553928432512 [1.044e17]
+        emit Sync(reserve0: 67937862163384871 [6.793e16], reserve1: 104418553928432512 [1.044e17])
+         [Stop] 
+     [598] 0x9f################################e8F21::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 958091290640355805468 [9.58e20]
+     [598] 0x9f################################e8F21::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 958091290640355805468 [9.58e20]
+     [8643] 0x9f################################e8F21::transfer(0xE7################################E06Eb, 958091290640355805468 [9.58e20])
+        [3732] 0xBd################################dC761::swapExactTokensForETHSupportingFeeOnTransferTokens(ContractTest: [0x7F################################e1496], 0xE7################################E06Eb, 958091290640355805468 [9.58e20])
+            [Return] 0x00################################00000000000000000000000000001000000000000000000000000000000000000000000000033f03008a6f5f1c91c000000000000000000000000000000000000000000000033f03008a6f5f1c91c
+        emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0xE7################################E06Eb, value: 958091290640355805468 [9.58e20])
+         [Return] true
+     [504] 0xE7################################E06Eb::getReserves() [staticcall]
+         [Return] 67937862163384871 [6.793e16], 104418553928432512 [1.044e17], 1686049583 [1.686e9]
+     [1021] 0x7a################################2488D::getAmountOut(958091290640355805468 [9.58e20], 104418553928432512 [1.044e17], 67937862163384871 [6.793e16]) [staticcall]
+         [Return] 67930436418434747 [6.793e16]
+     [39771] 0xE7################################E06Eb::swap(67930436418434747 [6.793e16], 0, ContractTest: [0x7F################################e1496], 0x)
+        [26543] 0x9f################################e8F21::transfer(ContractTest: [0x7F################################e1496], 67930436418434747 [6.793e16])
+           [1732] 0xBd################################dC761::swapExactTokensForETHSupportingFeeOnTransferTokens(0xE7################################E06Eb, ContractTest: [0x7F################################e1496], 67930436418434747 [6.793e16])
+               [Return] 0x00################################0000000000000000000000000000100000000000000000000000000000000000000000000000000f1565f3c2876bb00000000000000000000000000000000000000000000000000f1565f3c2876bb
+           emit Transfer(from: 0xE7################################E06Eb, to: ContractTest: [0x7F################################e1496], value: 67930436418434747 [6.793e16])
+            [Return] true
+        [598] 0x9f################################e8F21::balanceOf(0xE7################################E06Eb) [staticcall]
+            [Return] 958091298066100755592 [9.58e20]
+        [534] 0xC0################################56Cc2::balanceOf(0xE7################################E06Eb) [staticcall]
+            [Return] 104418553928432512 [1.044e17]
+        emit Sync(reserve0: 958091298066100755592 [9.58e20], reserve1: 104418553928432512 [1.044e17])
+        emit Swap(sender: ContractTest: [0x7F################################e1496], amount0In: 958091290640355805468 [9.58e20], amount1In: 0, amount0Out: 67930436418434747 [6.793e16], amount1Out: 0, to: ContractTest: [0x7F################################e1496])
+         [Stop] 
+     [534] 0xC0################################56Cc2::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 0
+      [Revert] revert: Postcondition failed
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.97s (935.94ms CPU time)
+
+Ran 1 test suite in 2.92s (1.97s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test/VINU_exp/0x9f################################e8F21.sol:ContractTest
+[FAIL: revert: Postcondition failed] test() (gas: 337129)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

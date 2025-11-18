@@ -1,0 +1,75 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.49s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/Annex_exp.sol/0xe6################################263E3.sol:429:9:
+    |
+429 |         address borrower,
+    |         ^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/Annex_exp.sol/0xe6################################263E3.sol:430:9:
+    |
+430 |         uint256 repayAmount,
+    |         ^^^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/Annex_exp.sol/0xe6################################263E3.sol:431:9:
+    |
+431 |         address cTokenCollateral
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/Annex_exp.sol/0xe6################################263E3.sol:436:24:
+    |
+436 |     function balanceOf(address account) external returns (uint256) {
+    |                        ^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/Annex_exp.sol/0xe6################################263E3.sol:440:21:
+    |
+440 |     function redeem(uint256 redeemTokens) external returns (uint256) {
+    |                     ^^^^^^^^^^^^^^^^^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> src/migration_result_test2/Annex_exp.sol/0xe6################################263E3.sol:428:5:
+    |
+428 |     function liquidateBorrow(
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> src/migration_result_test2/Annex_exp.sol/0xe6################################263E3.sol:436:5:
+    |
+436 |     function balanceOf(address account) external returns (uint256) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> src/migration_result_test2/Annex_exp.sol/0xe6################################263E3.sol:440:5:
+    |
+440 |     function redeem(uint256 redeemTokens) external returns (uint256) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/Annex_exp.sol/0xe6################################263E3.sol:ContractTest
+[PASS] test() (gas: 3629414)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 496.68ms (4.92ms CPU time)
+
+Ran 1 test suite in 500.63ms (496.68ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

@@ -1,0 +1,65 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.47s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/BEVO_exp.sol/0xf1################################cb9d5.sol:ContractTest
+[FAIL: panic: arithmetic underflow or overflow (0x11)] test() (gas: 185236)
+Traces:
+  [185236] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 337000000000000000000 [3.37e20]
+     [160941] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(192500000000000000000 [1.925e20], 0, [0xbb################################c095c, 0xf1################################CB9d5], ContractTest: [0x7F################################e1496], 1675071422 [1.675e9])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0xf0################################E3d3B, 192500000000000000000 [1.925e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0xf0################################E3d3B, value: 192500000000000000000 [1.925e20])
+            [Return] true
+        [12748] 0xf1################################CB9d5::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0xf0################################E3d3B::getReserves() [staticcall]
+            [Return] 3946463272242011134 [3.946e18], 2711339479754453442 [2.711e18], 1662994753 [1.662e9]
+        [534] 0xbb################################c095c::balanceOf(0xf0################################E3d3B) [staticcall]
+            [Return] 196446463272242011134 [1.964e20]
+        [116851] 0xf0################################E3d3B::swap(0, 2656736923021256093 [2.656e18], ContractTest: [0x7F################################e1496], 0x)
+           [80249] 0xf1################################CB9d5::transfer(ContractTest: [0x7F################################e1496], 2656736923021256093 [2.656e18])
+              emit Transfer(from: 0xf0################################E3d3B, to: ContractTest: [0x7F################################e1496], value: 2630169553791043533 [2.63e18])
+               [Return] true
+           [534] 0xbb################################c095c::balanceOf(0xf0################################E3d3B) [staticcall]
+               [Return] 196446463272242011134 [1.964e20]
+           [2748] 0xf1################################CB9d5::balanceOf(0xf0################################E3d3B) [staticcall]
+               [Return] 54603282065975263 [5.46e16]
+           emit Sync(reserve0: 196446463272242011134 [1.964e20], reserve1: 54603282065975263 [5.46e16])
+           emit Swap(sender: 0x10################################6024E, amount0In: 192500000000000000000 [1.925e20], amount1In: 725332777914 [7.253e11], amount0Out: 0, amount1Out: 2656736923021256093 [2.656e18], to: ContractTest: [0x7F################################e1496])
+            [Stop] 
+        [2748] 0xf1################################CB9d5::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 2630204492597996440 [2.63e18]
+         [Stop] 
+     [8138] 0xf1################################CB9d5::deliver(3028267986646483923 [3.028e18])
+         [Revert] panic: arithmetic underflow or overflow (0x11)
+      [Revert] panic: arithmetic underflow or overflow (0x11)
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.63s (1.44s CPU time)
+
+Ran 1 test suite in 4.85s (2.63s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/BEVO_exp.sol/0xf1################################cb9d5.sol:ContractTest
+[FAIL: panic: arithmetic underflow or overflow (0x11)] test() (gas: 185236)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

@@ -1,0 +1,65 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.46s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/BEVO_exp.sol/0xC3################################9B797.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 682228)
+Traces:
+  [682228] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 337000000000000000000 [3.37e20]
+     [665827] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(192500000000000000000 [1.925e20], 0, [0xbb################################c095c, 0xC3################################9B797], ContractTest: [0x7F################################e1496], 1675071422 [1.675e9])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0xd0################################08C62, 192500000000000000000 [1.925e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0xd0################################08C62, value: 192500000000000000000 [1.925e20])
+            [Return] true
+        [206297] 0xC3################################9B797::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0xd0################################08C62::getReserves() [staticcall]
+            [Return] 196381458903640 [1.963e14], 104893995523 [1.048e11], 1669175577 [1.669e9]
+        [534] 0xbb################################c095c::balanceOf(0xd0################################08C62) [staticcall]
+            [Return] 192500196381458903640 [1.925e20]
+        [370639] 0xd0################################08C62::swap(0, 104893888245 [1.048e11], ContractTest: [0x7F################################e1496], 0x)
+           [276488] 0xC3################################9B797::transfer(ContractTest: [0x7F################################e1496], 104893888245 [1.048e11])
+              emit Transfer(from: 0xd0################################08C62, to: ContractTest: [0x7F################################e1496], value: 104893888245 [1.048e11])
+               [Return] true
+           [534] 0xbb################################c095c::balanceOf(0xd0################################08C62) [staticcall]
+               [Return] 192500196381458903640 [1.925e20]
+           [60297] 0xC3################################9B797::balanceOf(0xd0################################08C62) [staticcall]
+               [Return] 45796027 [4.579e7]
+           emit Sync(reserve0: 192500196381458903640 [1.925e20], reserve1: 45796027 [4.579e7])
+           emit Swap(sender: 0x10################################6024E, amount0In: 192500000000000000000 [1.925e20], amount1In: 45688749 [4.568e7], amount0Out: 0, amount1Out: 104893888245 [1.048e11], to: ContractTest: [0x7F################################e1496])
+            [Stop] 
+        [60297] 0xC3################################9B797::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 104893888245 [1.048e11]
+         [Stop] 
+     [250] 0xC3################################9B797::deliver(3028267986646483923 [3.028e18])
+         [Revert] EvmError: Revert
+      [Revert] EvmError: Revert
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.04s (7.73ms CPU time)
+
+Ran 1 test suite in 3.90s (1.04s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/BEVO_exp.sol/0xC3################################9B797.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 682228)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

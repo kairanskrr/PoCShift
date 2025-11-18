@@ -1,0 +1,136 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.44s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/OLIFE_exp.sol/0x42################################C1711.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 650621)
+Traces:
+  [650621] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 969000000000000000000 [9.69e20]
+     [534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 969000000000000000000 [9.69e20]
+     [213362] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(969000000000000000000 [9.69e20], 0, [0xbb################################c095c, 0x42################################C1711], ContractTest: [0x7F################################e1496], 1681866278 [1.681e9])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0x9c################################9C38C, 969000000000000000000 [9.69e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x9c################################9C38C, value: 969000000000000000000 [9.69e20])
+            [Return] true
+        [29331] 0x42################################C1711::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0x9c################################9C38C::getReserves() [staticcall]
+            [Return] 912507 [9.125e5], 1913071808818 [1.913e12], 1626932623 [1.626e9]
+        [534] 0xbb################################c095c::balanceOf(0x9c################################9C38C) [staticcall]
+            [Return] 969000001913071808818 [9.69e20]
+        [148056] 0x9c################################9C38C::swap(912506 [9.125e5], 0, ContractTest: [0x7F################################e1496], 0x)
+           [106879] 0x42################################C1711::transfer(ContractTest: [0x7F################################e1496], 912506 [9.125e5])
+              emit Transfer(from: 0x9c################################9C38C, to: ContractTest: [0x7F################################e1496], value: 866882 [8.668e5])
+               [Return] true
+           [7331] 0x42################################C1711::balanceOf(0x9c################################9C38C) [staticcall]
+               [Return] 1
+           [534] 0xbb################################c095c::balanceOf(0x9c################################9C38C) [staticcall]
+               [Return] 969000001913071808818 [9.69e20]
+           emit Sync(reserve0: 1, reserve1: 969000001913071808818 [9.69e20])
+           emit Swap(sender: 0x10################################6024E, amount0In: 0, amount1In: 969000000000000000000 [9.69e20], amount0Out: 912506 [9.125e5], amount1Out: 0, to: ContractTest: [0x7F################################e1496])
+            [Stop] 
+        [7331] 0x42################################C1711::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 866882 [8.668e5]
+         [Stop] 
+     [7331] 0x42################################C1711::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 866882 [8.668e5]
+     [412392] 0x42################################C1711::transfer(ContractTest: [0x7F################################e1496], 866882 [8.668e5])
+        [275] 0x10################################6024E::WETH() [staticcall]
+            [Return] 0xbb################################c095c
+        emit Approval(owner: 0x42################################C1711, spender: 0x10################################6024E, value: 31250000000 [3.125e10])
+        [134730] 0x10################################6024E::swapExactTokensForETHSupportingFeeOnTransferTokens(31250000000 [3.125e10], 0, [0x42################################C1711, 0xbb################################c095c], 0x42################################C1711, 1681866578 [1.681e9])
+           [55502] 0x42################################C1711::transferFrom(0x42################################C1711, 0x9c################################9C38C, 31250000000 [3.125e10])
+              emit Transfer(from: 0x42################################C1711, to: 0x9c################################9C38C, value: 30937500000 [3.093e10])
+              emit Approval(owner: 0x42################################C1711, spender: 0x10################################6024E, value: 0)
+               [Return] true
+           [893] 0x9c################################9C38C::getReserves() [staticcall]
+               [Return] 1, 969000001913071808818 [9.69e20], 1681866278 [1.681e9]
+           [7331] 0x42################################C1711::balanceOf(0x9c################################9C38C) [staticcall]
+               [Return] 30937596779 [3.093e10]
+           [47055] 0x9c################################9C38C::swap(0, 969000001881672195580 [9.69e20], 0x10################################6024E, 0x)
+              [25162] 0xbb################################c095c::transfer(0x10################################6024E, 969000001881672195580 [9.69e20])
+                 emit Transfer(from: 0x9c################################9C38C, to: 0x10################################6024E, value: 969000001881672195580 [9.69e20])
+                  [Return] true
+              [7331] 0x42################################C1711::balanceOf(0x9c################################9C38C) [staticcall]
+                  [Return] 30937596779 [3.093e10]
+              [534] 0xbb################################c095c::balanceOf(0x9c################################9C38C) [staticcall]
+                  [Return] 31399613238 [3.139e10]
+              emit Sync(reserve0: 30937596779 [3.093e10], reserve1: 31399613238 [3.139e10])
+              emit Swap(sender: 0x10################################6024E, amount0In: 30937596778 [3.093e10], amount1In: 0, amount0Out: 0, amount1Out: 969000001881672195580 [9.69e20], to: 0x10################################6024E)
+               [Stop] 
+           [534] 0xbb################################c095c::balanceOf(0x10################################6024E) [staticcall]
+               [Return] 969000001881672195580 [9.69e20]
+           [9223] 0xbb################################c095c::withdraw(969000001881672195580 [9.69e20])
+              [83] 0x10################################6024E::fallback{value: 969000001881672195580}()
+                  [Stop] 
+              emit Withdrawal(param0: 0x10################################6024E, param1: 969000001881672195580 [9.69e20])
+               [Stop] 
+           [55] 0x42################################C1711::fallback{value: 969000001881672195580}()
+               [Stop] 
+            [Stop] 
+        emit Approval(owner: 0x42################################C1711, spender: 0x10################################6024E, value: 18750000000 [1.875e10])
+        [191459] 0x10################################6024E::addLiquidityETH{value: 484500000940836097790}(0x42################################C1711, 18750000000 [1.875e10], 0, 0, 0xe7################################1C652, 1681866578 [1.681e9])
+           [2676] 0xcA################################50c73::getPair(0x42################################C1711, 0xbb################################c095c) [staticcall]
+               [Return] 0x9c################################9C38C
+           [893] 0x9c################################9C38C::getReserves() [staticcall]
+               [Return] 30937596779 [3.093e10], 31399613238 [3.139e10], 1681866278 [1.681e9]
+           [47171] 0x42################################C1711::transferFrom(0x42################################C1711, 0x9c################################9C38C, 18750000000 [1.875e10])
+              emit Transfer(from: 0x42################################C1711, to: 0x9c################################9C38C, value: 18562500000 [1.856e10])
+              emit Approval(owner: 0x42################################C1711, spender: 0x10################################6024E, value: 0)
+               [Return] true
+           [21974] 0xbb################################c095c::deposit{value: 19030009099}()
+              emit Deposit(param0: 0x10################################6024E, param1: 19030009099 [1.903e10])
+               [Stop] 
+           [3262] 0xbb################################c095c::transfer(0x9c################################9C38C, 19030009099 [1.903e10])
+              emit Transfer(from: 0x10################################6024E, to: 0x9c################################9C38C, value: 19030009099 [1.903e10])
+               [Return] true
+           [92641] 0x9c################################9C38C::mint(0xe7################################1C652)
+              [7331] 0x42################################C1711::balanceOf(0x9c################################9C38C) [staticcall]
+                  [Return] 49500189685 [4.95e10]
+              [534] 0xbb################################c095c::balanceOf(0x9c################################9C38C) [staticcall]
+                  [Return] 50429622337 [5.042e10]
+              [2354] 0xcA################################50c73::feeTo() [staticcall]
+                  [Return] 0x0E################################39706
+              emit Transfer(from: 0x00################################00000, to: 0x0E################################39706, value: 582026571 [5.82e8])
+              emit Transfer(from: 0x00################################00000, to: 0xe7################################1C652, value: 1139575344 [1.139e9])
+              emit Sync(reserve0: 49500189685 [4.95e10], reserve1: 50429622337 [5.042e10])
+              emit Mint(sender: 0x10################################6024E, amount0: 18562592906 [1.856e10], amount1: 19030009099 [1.903e10])
+               [Return] 1139575344 [1.139e9]
+           [55] 0x42################################C1711::fallback{value: 484500000921806088691}()
+               [Stop] 
+            [Return] 18750000000 [1.875e10], 19030009099 [1.903e10], 1139575344 [1.139e9]
+        emit SwapAndLiquify(: 31250000000 [3.125e10], : 969000001881672195580 [9.69e20], : 18750000000 [1.875e10])
+        [2183] 0xe7################################1C652::fallback{value: 872100001676377967832}()
+            [OutOfGas] EvmError: OutOfGas
+         [Revert] EvmError: Revert
+      [Revert] EvmError: Revert
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.03s (6.95ms CPU time)
+
+Ran 1 test suite in 3.22s (1.03s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/OLIFE_exp.sol/0x42################################C1711.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 650621)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

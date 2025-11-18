@@ -1,0 +1,59 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.18s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/migration_result_test2/Visor_exp.t.sol/0x84################################D0643.sol:367:5:
+    |
+367 |     function owner() external returns (address) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/Visor_exp.t.sol/0x84################################D0643.sol:ContractTest
+[FAIL: revert: SafeMath: division by zero] test() (gas: 35783)
+Traces:
+  [35783] ContractTest::test()
+     [9873] 0xba################################96350::balanceOf(DefaultSender: [0x18################################d1f38]) [staticcall]
+        [2542] 0x31################################4684f::balanceOf(DefaultSender: [0x18################################d1f38]) [delegatecall]
+            [Return] 0
+         [Return] 0
+     [15836] 0x84################################D0643::deposit(100000000000000000000000000 [1e26], ContractTest: [0x7F################################e1496], DefaultSender: [0x18################################d1f38])
+        [3232] 0xba################################96350::totalSupply() [staticcall]
+           [2404] 0x31################################4684f::totalSupply() [delegatecall]
+               [Return] 1000000000000000000000000000 [1e27]
+            [Return] 1000000000000000000000000000 [1e27]
+        [2519] 0xF9################################2e91e::balanceOf(0x84################################D0643) [staticcall]
+            [Return] 0
+        [1232] 0xba################################96350::totalSupply() [staticcall]
+           [404] 0x31################################4684f::totalSupply() [delegatecall]
+               [Return] 1000000000000000000000000000 [1e27]
+            [Return] 1000000000000000000000000000 [1e27]
+         [Revert] revert: SafeMath: division by zero
+      [Revert] revert: SafeMath: division by zero
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 581.87ms (919.60s CPU time)
+
+Ran 1 test suite in 583.95ms (581.87ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/Visor_exp.t.sol/0x84################################D0643.sol:ContractTest
+[FAIL: revert: SafeMath: division by zero] test() (gas: 35783)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

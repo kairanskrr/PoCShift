@@ -1,0 +1,13 @@
+MONGO_DB="poc_dashboard"
+
+POC_COLLECTION = "poc"
+CONTRACT_COLLECTION = "contract"
+SUBCONTRACT_COLLECTION = "subcontract"
+FUNCTION_COLLECTION = "function"
+STATEMENT_COLLECTION = "statement"
+TRACKER_COLLECTION = "tracker"
+GRAPH_COLLECTION = "graph"
+
+MATCHING_COLLECTION = "matching"
+
+MATCHING_RUNNING_STATUS = "matching_status"

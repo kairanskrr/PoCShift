@@ -1,0 +1,81 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.45s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/BEVO_exp.sol/0x5f################################517fe.sol:ContractTest
+[FAIL: revert: Pancake: INSUFFICIENT_LIQUIDITY] test() (gas: 224114)
+Traces:
+  [224114] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 337000000000000000000 [3.37e20]
+     [160312] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(192500000000000000000 [1.925e20], 0, [0xbb################################c095c, 0x5f################################517FE], ContractTest: [0x7F################################e1496], 1675071422 [1.675e9])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0xDc################################104a8, 192500000000000000000 [1.925e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0xDc################################104a8, value: 192500000000000000000 [1.925e20])
+            [Return] true
+        [12046] 0x5f################################517FE::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0xDc################################104a8::getReserves() [staticcall]
+            [Return] 23981257867636320683985 [2.398e22], 118618058111408336 [1.186e17], 1669311200 [1.669e9]
+        [534] 0xbb################################c095c::balanceOf(0xDc################################104a8) [staticcall]
+            [Return] 192618618058111408336 [1.926e20]
+        [117576] 0xDc################################104a8::swap(23966452781733053761687 [2.396e22], 0, ContractTest: [0x7F################################e1496], 0x)
+           [81687] 0x5f################################517FE::transfer(ContractTest: [0x7F################################e1496], 23966452781733053761687 [2.396e22])
+              emit Transfer(from: 0xDc################################104a8, to: ContractTest: [0x7F################################e1496], value: 22768130142646401073605 [2.276e22])
+               [Return] true
+           [2046] 0x5f################################517FE::balanceOf(0xDc################################104a8) [staticcall]
+               [Return] 14805085910363430146 [1.48e19]
+           [534] 0xbb################################c095c::balanceOf(0xDc################################104a8) [staticcall]
+               [Return] 192618618058111408336 [1.926e20]
+           emit Sync(reserve0: 14805085910363430146 [1.48e19], reserve1: 192618618058111408336 [1.926e20])
+           emit Swap(sender: 0x10################################6024E, amount0In: 7096507848 [7.096e9], amount1In: 192500000000000000000 [1.925e20], amount0Out: 23966452781733053761687 [2.396e22], amount1Out: 0, to: ContractTest: [0x7F################################e1496])
+            [Stop] 
+        [2046] 0x5f################################517FE::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 22768130153559827398677 [2.276e22]
+         [Stop] 
+     [5387] 0x5f################################517FE::deliver(3028267986646483923 [3.028e18])
+         [Stop] 
+     [29096] 0xDc################################104a8::skim(ContractTest: [0x7F################################e1496])
+        [2046] 0x5f################################517FE::balanceOf(0xDc################################104a8) [staticcall]
+            [Return] 14805085910408263914 [1.48e19]
+        [15787] 0x5f################################517FE::transfer(ContractTest: [0x7F################################e1496], 44833768 [4.483e7])
+           emit Transfer(from: 0xDc################################104a8, to: ContractTest: [0x7F################################e1496], value: 42592081 [4.259e7])
+            [Return] true
+        [534] 0xbb################################c095c::balanceOf(0xDc################################104a8) [staticcall]
+            [Return] 192618618058111408336 [1.926e20]
+        [3262] 0xbb################################c095c::transfer(ContractTest: [0x7F################################e1496], 0)
+           emit Transfer(from: 0xDc################################104a8, to: ContractTest: [0x7F################################e1496], value: 0)
+            [Return] true
+         [Stop] 
+     [5387] 0x5f################################517FE::deliver(4544947785463603859 [4.544e18])
+         [Stop] 
+     [4317] 0xDc################################104a8::swap(337000000000000000000 [3.37e20], 0, ContractTest: [0x7F################################e1496], 0x)
+         [Revert] revert: Pancake: INSUFFICIENT_LIQUIDITY
+      [Revert] revert: Pancake: INSUFFICIENT_LIQUIDITY
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.02s (3.12ms CPU time)
+
+Ran 1 test suite in 3.28s (1.02s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/BEVO_exp.sol/0x5f################################517fe.sol:ContractTest
+[FAIL: revert: Pancake: INSUFFICIENT_LIQUIDITY] test() (gas: 224114)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

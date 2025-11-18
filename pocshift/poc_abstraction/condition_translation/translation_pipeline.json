@@ -1,0 +1,181 @@
+{
+  "translation_pipeline": {
+    "event_property_mapping_table": {
+      "transfer": {
+        "action": "transfer",
+        "variations": [
+          {
+            "params_count": 3,
+            "fields": ["token", "address", "amount"]
+          },
+          {
+            "params_count": 4,
+            "fields": ["token", "from", "address", "amount"]
+          },
+          {
+            "params_count": 4,
+            "fields": ["token", "address", "to", "amount"]
+          },
+          {
+            "params_count": 5,
+            "fields": ["token", "operator", "from", "address", "id", "amount"]
+          },
+          {
+            "params_count": 5,
+            "fields": ["token", "address", "to", "id", "amount"]
+          }
+        ]
+      },
+      "approval": {
+        "action": "approve",
+        "variations": [
+          {
+            "params_count": 3,
+            "fields": ["token", "caller", "callee", "amount"],
+            "details": {
+              "amount": "value or type(uint256).max"
+            }
+          }
+        ]
+      },
+      "ownership": {
+        "action": "ownership",
+        "variations": [
+          {
+            "params_count": 2,
+            "fields": ["previousOwner", "owner"]
+          }
+        ]
+      },
+      "burn": {
+        "action": "burn",
+        "variations": [
+          {
+            "params_count": 2,
+            "fields": ["token", "from", "amount"]
+          },
+          {
+            "params_count": 3,
+            "fields": ["token", "from", "to", "amount"]
+          }
+        ]
+      },
+      "deposit": {
+        "action": "deposit",
+        "variations": [
+          {
+            "params_count": 2,
+            "fields": ["token", "caller", "amount"]
+          },
+          {
+            "params_count": 3,
+            "fields": ["token", "caller", "pid", "amount"]
+          },
+          {
+            "params_count": 4,
+            "fields": ["token", "caller", "owner", "amount"]
+          }
+        ]
+      },
+      "withdraw": {
+        "action": "withdraw",
+        "variations": [
+          {
+            "params_count": 2,
+            "fields": ["token", "from", "amount"]
+          }
+        ]
+      },
+      "mint": {
+        "action": "mint",
+        "variations": [
+          {
+            "params_count": 3,
+            "fields": ["token", "caller", "amount"]
+          },
+          {
+            "params_count": 4,
+            "fields": ["token", "caller", "to", "amount", "index"]
+          }
+        ]
+      }
+    },
+    "condition_translation_logic": {
+      "precondition_to_vm_ops": {
+        "transfer": {
+          "convert_to": "deal",
+          "vm_code": [
+            "deal(address(token), address(account), amount);"
+          ]
+        },
+        "approve": {
+          "convert_to": "approve",
+          "vm_code": [
+            "vm.prank(address(caller));",
+            "token.approve(address(callee), type(uint256).max);"
+          ]
+        },
+        "deposit": {
+          "convert_to": "deposit",
+          "vm_code": [
+            "vm.prank(address(caller));",
+            "token.deposit(amount);"
+          ]
+        },
+        "burn": {
+          "convert_to": "deal",
+          "vm_code": [
+            "deal(address(token), address(account), amount);"
+          ]
+        },
+        "withdraw": {
+          "convert_to": "deal",
+          "vm_code": [
+            "deal(address(token), address(account), amount);"
+          ]
+        },
+        "warp": {
+          "convert_to": "warp",
+          "vm_code": [
+            "vm.warp(timestamp);"
+          ]
+        },
+        "startPrank": {
+          "convert_to": "startPrank",
+          "vm_code": [
+            "vm.startPrank(address(account));"
+          ]
+        },
+        "stopPrank": {
+          "convert_to": "stopPrank",
+          "vm_code": [
+            "vm.stopPrank();"
+          ]
+        }
+      },
+      "postcondition_translation": {
+        "balanceOf": {
+          "pre_check": "uint preCheck = token.balanceOf(account);",
+          "post_check": [
+            "uint postCheck = token.balanceOf(account);",
+            "require(postCheck > preCheck, \"Postcondition failed\");"
+          ]
+        },
+        "receive": {
+          "pre_check": "uint preCheck = address(account).balance;",
+          "post_check": [
+            "uint postCheck = address(account).balance;",
+            "require(postCheck > preCheck, \"Postcondition failed\");"
+          ]
+        },
+        "receiveFlashloan": {
+          "pre_check": "uint preCheck = token.balanceOf(account);",
+          "post_check": [
+            "uint postCheck = token.balanceOf(account);",
+            "require(postCheck > preCheck, \"Postcondition failed\");"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+[32m INFO[0m fetching abi from https://api.bscscan.com/api?module=contract&action=getabi&address=0xbb################################c095c&format=json&apikey=6ZUCAR738XJSX6WK3BGN2K8DX4RI9A875M
+[32m INFO[0m fetching code from bb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c
+Contract loaded: 0xbb################################c095c
+[32m INFO[0m fetching abi from https://api.bscscan.com/api?module=contract&action=getabi&address=0x10################################6024e&format=json&apikey=6ZUCAR738XJSX6WK3BGN2K8DX4RI9A875M
+[32m INFO[0m fetching code from 10ed43c718714eb63d5aa57b78b54704e256024e
+Contract loaded: 0x10################################6024e
+[32m INFO[0m fetching abi from https://api.bscscan.com/api?module=contract&action=getabi&address=0x38################################98867&format=json&apikey=6ZUCAR738XJSX6WK3BGN2K8DX4RI9A875M
+[32m INFO[0m fetching code from 389672e15600ea7453066cf20735f38f2d298867
+Contract loaded: 0x38################################98867
+[32m INFO[0m 
+
+ ================ EVM Fuzzer Start ===================
+
+
+[32m INFO[0m Deploying contract: 0xbb################################c095c
+[32m INFO[0m Contract 0xbb################################c095c deployed to: 0xbb################################c095c -> balacne is 0
+[32m INFO[0m Deploying contract: 0x10################################6024e
+[32m INFO[0m Contract 0x10################################6024e deployed to: 0x10################################6024e -> balacne is 0
+[32m INFO[0m Deploying contract: 0x38################################98867
+[32m INFO[0m Contract 0x38################################98867 deployed to: 0x38################################98867 -> balacne is 0
+[32m INFO[0m Deployed all contracts
+
+[32m INFO[0m [Stats #0] run time: 0h-0m-2s, clients: 1, corpus: 0, objectives: 0, executions: 0, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0x8E################################d79dd
+   [1] Router.swapExactETHForTokens{value: 3116.4275 ether}(0, path:(WETH  0xbb################################c095c), address(this), block.timestamp);
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-2s, clients: 1, corpus: 21, objectives: 0, executions: 1, exec/sec: 0.000
+[32m INFO[0m balance of 0xbb################################c095c at 0x2b42ff9 is 1198942160481108224322870
+[32m INFO[0m fetching code from 8ef508aca04b32ff3ba5003177cb18bfa6cd79dd
+[32m INFO[0m fetching code from e9e7cea3dedca5984780bafc599bd69add087d56
+[32m INFO[0m fetching abi from https://api.bscscan.com/api?module=contract&action=getabi&address=0xe9################################87d56&format=json&apikey=6ZUCAR738XJSX6WK3BGN2K8DX4RI9A875M
+[32m INFO[0m fetching pairs for 0xe9################################87d56
+[32m INFO[0m fetching pairs for 0xe9################################87d56
+[32m INFO[0m fetching code from 32776ed4d96ed069a2d812773f0ad8ad9ef83cf8
+[32m INFO[0m fetching code from cb99fe720124129520f7a09ca3cbef78d58ed934
+[32m INFO[0m fetching code from db2177fee5b0ebdc7b8038cb70f3964bb6d14143
+[32m INFO[0m fetching code from e49f5ca131354ed5ffb9273f17bd7f3017727db6
+[32m INFO[0m fetching code from 1c79d6599a5ff35922b2aed8d2a2eacbc77ebd44
+[32m INFO[0m fetching code from 469efaaadb06b5f4618ed1907aba380411f9a200
+[32m INFO[0m fetching code from 85faac652b707fdf6907ef726751087f9e0b6687
+[32m INFO[0m fetching code from 8f45b99bf65cdbf9bc0c0b4846d6a324d2de5314
+[32m INFO[0m fetching code from b2ded03530571c5792d0a33600b2f1f4a3f91c55
+[32m INFO[0m fetching code from b784c80bfc8f8131bf8d10d4af76dffbed0adf87
+[32m INFO[0m fetching code from 1b96b92314c44b159149f7e0303511fb2fc4774f
+[32m INFO[0m fetching code from 58f876857a02d6762e0101bb5c46a8c1ed44dc16
+[32m INFO[0m fetching code from acaac9311b0096e04dfe96b6d87dec867d3883dc
+[32m INFO[0m fetching code from dc558d64c29721d74c4456cfb4363a6e6660a9bb
+thread 'main' panicked at src/evm/tokens/uniswap.rs:233:10:
+Unexpected RPC error, consider setting env <ETH_RPC_URL> 
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

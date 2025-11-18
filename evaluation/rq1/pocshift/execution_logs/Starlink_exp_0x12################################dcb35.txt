@@ -1,0 +1,56 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.41s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2072): Unused local variable.
+   --> src/migration_result_test2/Starlink_exp.sol/0x12################################dcb35.sol:381:9:
+    |
+381 |         uint256 amountIn = COMMONADDRESS0.balanceOf(address(this));
+    |         ^^^^^^^^^^^^^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/Starlink_exp.sol/0x12################################dcb35.sol:ContractTest
+[FAIL: revert: PancakeLibrary: INSUFFICIENT_LIQUIDITY] test() (gas: 56748)
+Traces:
+  [56748] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 2216191447362031586143 [2.216e21]
+     [534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 2216191447362031586143 [2.216e21]
+     [534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 2216191447362031586143 [2.216e21]
+     [27962] 0xbb################################c095c::transfer(0xB3################################7ef3E, 2216191447362031586143 [2.216e21])
+        emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0xB3################################7ef3E, value: 2216191447362031586143 [2.216e21])
+         [Return] true
+     [8710] 0x10################################6024E::getAmountsOut(2177831607672464852249 [2.177e21], [0xbb################################c095c, 0x12################################dcb35]) [staticcall]
+        [2893] 0xB3################################7ef3E::getReserves() [staticcall]
+            [Return] 0, 0, 0
+         [Revert] revert: PancakeLibrary: INSUFFICIENT_LIQUIDITY
+      [Revert] revert: PancakeLibrary: INSUFFICIENT_LIQUIDITY
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 919.89ms (178.52ms CPU time)
+
+Ran 1 test suite in 925.50ms (919.89ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/Starlink_exp.sol/0x12################################dcb35.sol:ContractTest
+[FAIL: revert: PancakeLibrary: INSUFFICIENT_LIQUIDITY] test() (gas: 56748)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

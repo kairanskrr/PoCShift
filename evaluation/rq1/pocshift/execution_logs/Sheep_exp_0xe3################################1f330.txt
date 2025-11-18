@@ -1,0 +1,59 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.41s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/Sheep_exp.sol/0xe3################################1f330.sol:ContractTest
+[FAIL: revert: Pancake: TRANSFER_FAILED] test() (gas: 140877)
+Traces:
+  [140877] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 380000000000000000000 [3.8e20]
+     [534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 380000000000000000000 [3.8e20]
+     [124099] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(380000000000000000000 [3.8e20], 0, [0xbb################################c095c, 0xE3################################1f330], ContractTest: [0x7F################################e1496], 1676025497 [1.676e9])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0x04################################A3528, 380000000000000000000 [3.8e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x04################################A3528, value: 380000000000000000000 [3.8e20])
+            [Return] true
+        [12320] 0xE3################################1f330::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0x04################################A3528::getReserves() [staticcall]
+            [Return] 3599460827532323 [3.599e15], 101847409437007620 [1.018e17], 1651066642 [1.651e9]
+        [534] 0xbb################################c095c::balanceOf(0x04################################A3528) [staticcall]
+            [Return] 380003599460827532323 [3.8e20]
+        [83862] 0x04################################A3528::swap(0, 101846442302646739 [1.018e17], ContractTest: [0x7F################################e1496], 0x)
+           [72058] 0xE3################################1f330::transfer(ContractTest: [0x7F################################e1496], 101846442302646739 [1.018e17])
+              [2906] 0x4F################################28F9f::_beforeTokenTransfer(0x04################################A3528, 0x04################################A3528, ContractTest: [0x7F################################e1496])
+                  [Stop] 
+              emit Transfer(from: 0x04################################A3528, to: 0x34################################31Da1, value: 0)
+               [Revert] revert: SafeMath: subtraction overflow
+            [Revert] revert: Pancake: TRANSFER_FAILED
+         [Revert] revert: Pancake: TRANSFER_FAILED
+      [Revert] revert: Pancake: TRANSFER_FAILED
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.98s (1.13s CPU time)
+
+Ran 1 test suite in 2.80s (1.98s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/Sheep_exp.sol/0xe3################################1f330.sol:ContractTest
+[FAIL: revert: Pancake: TRANSFER_FAILED] test() (gas: 140877)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

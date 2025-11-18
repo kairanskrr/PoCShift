@@ -1,0 +1,54 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.41s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/BEVO_exp.sol/0xdb################################03155.sol:ContractTest
+[FAIL: revert: Pancake: TRANSFER_FAILED] test() (gas: 76358)
+Traces:
+  [76358] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 337000000000000000000 [3.37e20]
+     [60659] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(192500000000000000000 [1.925e20], 0, [0xbb################################c095c, 0xdb################################03155], ContractTest: [0x7F################################e1496], 1675071422 [1.675e9])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0x5D################################6b6b5, 192500000000000000000 [1.925e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x5D################################6b6b5, value: 192500000000000000000 [1.925e20])
+            [Return] true
+        [12421] 0xdb################################03155::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0x5D################################6b6b5::getReserves() [staticcall]
+            [Return] 1126010090914413846 [1.126e18], 85435021484639384151565 [8.543e22], 1658515905 [1.658e9]
+        [534] 0xbb################################c095c::balanceOf(0x5D################################6b6b5) [staticcall]
+            [Return] 193626010090914413846 [1.936e20]
+        [20321] 0x5D################################6b6b5::swap(0, 84936945863722143424877 [8.493e22], ContractTest: [0x7F################################e1496], 0x)
+           [8511] 0xdb################################03155::transfer(ContractTest: [0x7F################################e1496], 84936945863722143424877 [8.493e22])
+               [Revert] revert: $AEKI::antiWhale: Transfer amount exceeds the maxTransferAmount
+            [Revert] revert: Pancake: TRANSFER_FAILED
+         [Revert] revert: Pancake: TRANSFER_FAILED
+      [Revert] revert: Pancake: TRANSFER_FAILED
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.03s (1.41ms CPU time)
+
+Ran 1 test suite in 3.32s (1.03s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/BEVO_exp.sol/0xdb################################03155.sol:ContractTest
+[FAIL: revert: Pancake: TRANSFER_FAILED] test() (gas: 76358)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

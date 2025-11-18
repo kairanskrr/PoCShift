@@ -1,0 +1,69 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.41s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/Nimbus_exp.sol/0x93################################81f2b.sol:363:25:
+    |
+363 |     function NimbusCall(address sender, uint256 amount0, uint256 amount1, bytes calldata data) external {
+    |                         ^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/Nimbus_exp.sol/0x93################################81f2b.sol:363:58:
+    |
+363 |     function NimbusCall(address sender, uint256 amount0, uint256 amount1, bytes calldata data) external {
+    |                                                          ^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+   --> src/migration_result_test2/Nimbus_exp.sol/0x93################################81f2b.sol:363:75:
+    |
+363 |     function NimbusCall(address sender, uint256 amount0, uint256 amount1, bytes calldata data) external {
+    |                                                                           ^^^^^^^^^^^^^^^^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/Nimbus_exp.sol/0x93################################81f2b.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 59902)
+Traces:
+  [59902] ContractTest::test()
+     [5031] 0xdA################################31ec7::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 81778909 [8.177e7]
+     [3031] 0xdA################################31ec7::balanceOf(0x93################################81f2b) [staticcall]
+         [Return] 7796309221 [7.796e9]
+     [40473] 0x93################################81f2b::swap(7718346128 [7.718e9], 0, ContractTest: [0x7F################################e1496], 0x00################################000000000000000000001cc0c9d90)
+        [18501] 0xdA################################31ec7::transfer(ContractTest: [0x7F################################e1496], 7718346128 [7.718e9])
+           emit Transfer(from: 0x93################################81f2b, to: ContractTest: [0x7F################################e1496], value: 7718346128 [7.718e9])
+            [Stop] 
+        [8154] ContractTest::NimbusCall(ContractTest: [0x7F################################e1496], 7718346128 [7.718e9], 0, 0x00################################000000000000000000001cc0c9d90)
+           [6901] 0xdA################################31ec7::transfer(0x93################################81f2b, 771834612 [7.718e8])
+              emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x93################################81f2b, value: 771834612 [7.718e8])
+               [Stop] 
+            [Revert] EvmError: Revert
+         [Revert] EvmError: Revert
+      [Revert] EvmError: Revert
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 524.81ms (1.02ms CPU time)
+
+Ran 1 test suite in 530.37ms (524.81ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/Nimbus_exp.sol/0x93################################81f2b.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 59902)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

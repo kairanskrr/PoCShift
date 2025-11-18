@@ -1,0 +1,63 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.39s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/Sheep_exp.sol/0xaa################################0f28a.sol:ContractTest
+[FAIL: revert: Pancake: TRANSFER_FAILED] test() (gas: 145178)
+Traces:
+  [145178] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 380000000000000000000 [3.8e20]
+     [534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 380000000000000000000 [3.8e20]
+     [128400] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(380000000000000000000 [3.8e20], 0, [0xbb################################c095c, 0xAA################################0F28a], ContractTest: [0x7F################################e1496], 1676025497 [1.676e9])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0xb2################################eBD58, 380000000000000000000 [3.8e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0xb2################################eBD58, value: 380000000000000000000 [3.8e20])
+            [Return] true
+        [12292] 0xAA################################0F28a::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0xb2################################eBD58::getReserves() [staticcall]
+            [Return] 10002373878269575272228 [1e22], 6562900475671323 [6.562e15], 1659255277 [1.659e9]
+        [534] 0xbb################################c095c::balanceOf(0xb2################################eBD58) [staticcall]
+            [Return] 380006562900475671323 [3.8e20]
+        [88141] 0xb2################################eBD58::swap(10002200699407346277339 [1e22], 0, ContractTest: [0x7F################################e1496], 0x)
+           [76374] 0xAA################################0F28a::transfer(ContractTest: [0x7F################################e1496], 10002200699407346277339 [1e22])
+              [2572] 0xBD################################81951::e568987f(000000000000000000000000b20587d593bfffa18aa6e5ec83cbbbd163debd58) [staticcall]
+                  [Return] 0x00################################00000000000000000000000000000
+              [572] 0xBD################################81951::e568987f(0000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496) [staticcall]
+                  [Return] 0x00################################00000000000000000000000000000
+              [2741] 0xBD################################81951::606b55a7(000000000000000000000000b20587d593bfffa18aa6e5ec83cbbbd163debd58000000000000000000000000b20587d593bfffa18aa6e5ec83cbbbd163debd580000000000000000000000007fa9385be102ac3eac297483dd6233d62b3e1496)
+                  [Stop] 
+              emit Transfer(from: 0xb2################################eBD58, to: 0xb6################################3a0F3, value: 0)
+               [Revert] revert: SafeMath: subtraction overflow
+            [Revert] revert: Pancake: TRANSFER_FAILED
+         [Revert] revert: Pancake: TRANSFER_FAILED
+      [Revert] revert: Pancake: TRANSFER_FAILED
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 587.61ms (1.86ms CPU time)
+
+Ran 1 test suite in 1.40s (587.61ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/Sheep_exp.sol/0xaa################################0f28a.sol:ContractTest
+[FAIL: revert: Pancake: TRANSFER_FAILED] test() (gas: 145178)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

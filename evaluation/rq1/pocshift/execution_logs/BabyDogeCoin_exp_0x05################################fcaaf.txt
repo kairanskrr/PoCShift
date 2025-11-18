@@ -1,0 +1,60 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.58s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/BabyDogeCoin_exp.sol/0x05################################fcaaf.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 145981)
+Traces:
+  [145981] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 80000000000000000000000 [8e22]
+     [11995] 0xbb################################c095c::withdraw(80000000000000000000000 [8e22])
+        [55] ContractTest::receive{value: 80000000000000000000000}()
+            [Stop] 
+        emit Withdrawal(param0: ContractTest: [0x7F################################e1496], param1: 80000000000000000000000 [8e22])
+         [Stop] 
+     [111135] 0x45################################6f762::buyTokensAndDepositOnBehalf{value: 80000000000000000000000}(ContractTest: [0x7F################################e1496], 80000000000000000000000 [8e22], 0, [0xbb################################c095c, 0x05################################fcaAf])
+        [23974] 0xbb################################c095c::deposit{value: 80000000000000000000000}()
+           emit Deposit(param0: 0x45################################6f762, param1: 80000000000000000000000 [8e22])
+            [Stop] 
+        [22701] ContractTest::stakeToken()
+            [Return] 0x05################################fcaAf
+        [2717] 0xbb################################c095c::allowance(0x45################################6f762, 0xC9################################F3c47) [staticcall]
+            [Return] 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]
+        [48780] 0xC9################################F3c47::swapExactTokensForTokensSupportingFeeOnTransferTokens(80000000000000000000000 [8e22], 0, [0xbb################################c095c, 0x05################################fcaAf], 0x45################################6f762, 1685241110 [1.685e9])
+           [25325] 0xbb################################c095c::transferFrom(0x45################################6f762, 0x59################################62728, 80000000000000000000000 [8e22])
+              emit Transfer(from: 0x45################################6f762, to: 0x59################################62728, value: 80000000000000000000000 [8e22])
+               [Return] true
+           [12046] 0x05################################fcaAf::balanceOf(0x45################################6f762) [staticcall]
+               [Return] 0
+            [Revert] EvmError: Revert
+         [Revert] EvmError: Revert
+      [Revert] EvmError: Revert
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.29s (300.73ms CPU time)
+
+Ran 1 test suite in 1.36s (1.29s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/BabyDogeCoin_exp.sol/0x05################################fcaaf.sol:ContractTest
+[FAIL: EvmError: Revert] test() (gas: 145981)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

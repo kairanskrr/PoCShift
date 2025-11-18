@@ -1,0 +1,92 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.56s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> src/migration_result_test2/EHIVE_exp.sol/0x21################################58d58.sol:417:5:
+    |
+417 |     function calcAmount(uint256 reserve1, uint256 reserve2, uint256 balance) internal returns (uint256) {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/EHIVE_exp.sol/0x21################################58d58.sol:ContractTest
+[FAIL: revert: _transfer:: Transfer Delay enabled.  Only one purchase per block allowed.] test() (gas: 3139094)
+Traces:
+  [3139094] ContractTest::test()
+     [2534] 0xC0################################56Cc2::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 45334768301100185740 [4.533e19]
+     [867577]  new UnstakeContract@0x56################################3b72f
+         [Return] 4110 bytes of code
+     [71762] UnstakeContract::stake(0)
+        [68517] 0x21################################58D58::stake(0, 0)
+           emit Transfer(from: UnstakeContract: [0x56################################3b72f], to: 0x00################################00000, value: 0)
+            [Stop] 
+         [Stop] 
+     [867577]  new UnstakeContract@0x2e################################8470b
+         [Return] 4110 bytes of code
+     [57262] UnstakeContract::stake(0)
+        [56517] 0x21################################58D58::stake(0, 0)
+           emit Transfer(from: UnstakeContract: [0x2e################################8470b], to: 0x00################################00000, value: 0)
+            [Stop] 
+         [Stop] 
+     [867577]  new UnstakeContract@0xF6################################A820a
+         [Return] 4110 bytes of code
+     [57262] UnstakeContract::stake(0)
+        [56517] 0x21################################58D58::stake(0, 0)
+           emit Transfer(from: UnstakeContract: [0xF6################################A820a], to: 0x00################################00000, value: 0)
+            [Stop] 
+         [Stop] 
+     [0] VM::warp(1692606287 [1.692e9])
+         [Return] 
+     [2504] 0x54################################22AAf::getReserves() [staticcall]
+         [Return] 374163202 [3.741e8], 1, 1662808401 [1.662e9]
+     [534] 0xC0################################56Cc2::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 45334768301100185740 [4.533e19]
+     [534] 0xC0################################56Cc2::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 45334768301100185740 [4.533e19]
+     [10862] 0xC0################################56Cc2::transfer(0x54################################22AAf, 45334768301100185740 [4.533e19])
+        emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x54################################22AAf, value: 45334768301100185740 [4.533e19])
+         [Return] true
+     [143038] 0x54################################22AAf::swap(374163201 [3.741e8], 0, ContractTest: [0x7F################################e1496], 0x)
+        [110185] 0x21################################58D58::transfer(ContractTest: [0x7F################################e1496], 374163201 [3.741e8])
+           emit Transfer(from: 0x54################################22AAf, to: ContractTest: [0x7F################################e1496], value: 374163201 [3.741e8])
+            [Return] true
+        [996] 0x21################################58D58::balanceOf(0x54################################22AAf) [staticcall]
+            [Return] 1
+        [534] 0xC0################################56Cc2::balanceOf(0x54################################22AAf) [staticcall]
+            [Return] 45334768301100185741 [4.533e19]
+        emit Sync(reserve0: 1, reserve1: 45334768301100185741 [4.533e19])
+        emit Swap(sender: ContractTest: [0x7F################################e1496], amount0In: 0, amount1In: 45334768301100185740 [4.533e19], amount0Out: 374163201 [3.741e8], amount1Out: 0, to: ContractTest: [0x7F################################e1496])
+         [Stop] 
+     [996] 0x21################################58D58::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 374163201 [3.741e8]
+     [2898] 0x21################################58D58::transfer(UnstakeContract: [0x56################################3b72f], 374163201 [3.741e8])
+         [Revert] revert: _transfer:: Transfer Delay enabled.  Only one purchase per block allowed.
+      [Revert] revert: _transfer:: Transfer Delay enabled.  Only one purchase per block allowed.
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 496.67ms (3.99ms CPU time)
+
+Ran 1 test suite in 1.28s (496.67ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/EHIVE_exp.sol/0x21################################58d58.sol:ContractTest
+[FAIL: revert: _transfer:: Transfer Delay enabled.  Only one purchase per block allowed.] test() (gas: 3139094)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

@@ -1,0 +1,54 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.50s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/TINU_exp.t.sol/0xa1################################b079b.sol:ContractTest
+[FAIL: revert: Pancake: TRANSFER_FAILED] test() (gas: 70633)
+Traces:
+  [70633] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 104850000000000000000 [1.048e20]
+     [54851] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(104850000000000000000 [1.048e20], 0, [0xbb################################c095c, 0xA1################################b079B], ContractTest: [0x7F################################e1496], 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0x68################################8dc3A, 104850000000000000000 [1.048e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x68################################8dc3A, value: 104850000000000000000 [1.048e20])
+            [Return] true
+        [10000] 0xA1################################b079B::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0x68################################8dc3A::getReserves() [staticcall]
+            [Return] 100000000591262662686180257325591 [1e32], 200901743105 [2.009e11], 1637872370 [1.637e9]
+        [534] 0xbb################################c095c::balanceOf(0x68################################8dc3A) [staticcall]
+            [Return] 104850000200901743105 [1.048e20]
+        [16884] 0x68################################8dc3A::swap(100000000399173719386637207746645 [1e32], 0, ContractTest: [0x7F################################e1496], 0x)
+           [5111] 0xA1################################b079B::transfer(ContractTest: [0x7F################################e1496], 100000000399173719386637207746645 [1e32])
+               [Revert] revert: Transfer amount exceeds the maxTxAmount.
+            [Revert] revert: Pancake: TRANSFER_FAILED
+         [Revert] revert: Pancake: TRANSFER_FAILED
+      [Revert] revert: Pancake: TRANSFER_FAILED
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.55s (679.67ms CPU time)
+
+Ran 1 test suite in 1.57s (1.55s CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/TINU_exp.t.sol/0xa1################################b079b.sol:ContractTest
+[FAIL: revert: Pancake: TRANSFER_FAILED] test() (gas: 70633)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

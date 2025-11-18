@@ -1,0 +1,27 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.20s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2_rq2/NovaExchange_exp.sol/0xb4################################8176a.sol:ContractTest
+[PASS] test() (gas: 10652)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 510.93ms (341.46µs CPU time)
+
+Ran 1 test suite in 522.66ms (510.93ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

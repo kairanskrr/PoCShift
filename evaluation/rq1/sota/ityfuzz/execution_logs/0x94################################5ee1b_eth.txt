@@ -1,0 +1,975 @@
+[32m INFO[0m fetching abi from https://api.etherscan.io/api?module=contract&action=getabi&address=0x55################################97955&format=json&apikey=GS896CZ6PQ13S3HGE6FRK1Z9DYCZFWF2RC
+[32m INFO[0m fetching code from 55d398326f99059ff775485246999027b3197955
+Contract loaded: 0x55################################97955
+[32m INFO[0m fetching abi from https://api.etherscan.io/api?module=contract&action=getabi&address=0x94################################5ee1b&format=json&apikey=GS896CZ6PQ13S3HGE6FRK1Z9DYCZFWF2RC
+[32m INFO[0m fetching code from 943aca8ed65fbf188a7d369cfc2bee0ae435ee1b
+Contract loaded: 0x94################################5ee1b
+[32m INFO[0m fetching abi from https://api.etherscan.io/api?module=contract&action=getabi&address=0x10################################6024e&format=json&apikey=GS896CZ6PQ13S3HGE6FRK1Z9DYCZFWF2RC
+[32m INFO[0m fetching code from 10ed43c718714eb63d5aa57b78b54704e256024e
+Contract loaded: 0x10################################6024e
+[32m INFO[0m 
+
+ ================ EVM Fuzzer Start ===================
+
+
+[32m INFO[0m Deploying contract: 0x55################################97955
+[32m INFO[0m Contract 0x55################################97955 deployed to: 0x55################################97955 -> balacne is 0
+[32m INFO[0m Deploying contract: 0x94################################5ee1b
+[32m INFO[0m Contract 0x94################################5ee1b deployed to: 0x94################################5ee1b -> balacne is 0
+[32m INFO[0m Deploying contract: 0x10################################6024e
+[32m INFO[0m Contract 0x10################################6024e deployed to: 0x10################################6024e -> balacne is 0
+[32m INFO[0m Deployed all contracts
+
+[32m INFO[0m Contract 0x55################################97955 has no abi
+[32m INFO[0m Too many unknown function signature for "0x55################################97955", we are going to decompile this contract using EVMole
+[32m INFO[0m fetching pairs for 0x94################################5ee1b
+[32m INFO[0m fetching pairs for 0x94################################5ee1b
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 41.31% Instruction Covered, 38.41% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-2s, clients: 1, corpus: 0, objectives: 0, executions: 0, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.updateStartTime(0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-2s, clients: 1, corpus: 23, objectives: 0, executions: 33, exec/sec: 0.000
+[32m INFO[0m [Stats #0] run time: 0h-0m-2s, clients: 1, corpus: 23, objectives: 0, executions: 33, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.updateStartTime{value: 17600775994229}(0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-2s, clients: 1, corpus: 24, objectives: 0, executions: 43, exec/sec: 0.000
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 41.38% Instruction Covered, 38.74% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-3s, clients: 1, corpus: 24, objectives: 0, executions: 43, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-3s, clients: 1, corpus: 25, objectives: 0, executions: 65, exec/sec: 0.000
+[32m INFO[0m [Stats #0] run time: 0h-0m-3s, clients: 1, corpus: 25, objectives: 0, executions: 65, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve{value: 313.1088 ether}(0x10################################6024E, 0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-3s, clients: 1, corpus: 26, objectives: 0, executions: 66, exec/sec: 0.000
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 41.45% Instruction Covered, 39.07% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-3s, clients: 1, corpus: 26, objectives: 0, executions: 66, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x68################################c9024, 452312848583266388373324160190187140051835877600158453281.4370 ether)
+       0x01
+   [1] 0x94################################5ee1B.approve(0xe1################################c8510, 6252606121842490859865585814329628359684.4346 ether)
+       0x01
+   [1] 0x94################################5ee1B.withdrawToken(0x00################################00000, 0, "")
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-3s, clients: 1, corpus: 27, objectives: 0, executions: 97, exec/sec: 0.000
+[32m INFO[0m [Stats #0] run time: 0h-0m-3s, clients: 1, corpus: 27, objectives: 0, executions: 97, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.withdrawToken{value: 3354.9614 ether}(0x35################################31dDb, 319860115260667741778878288392695556623036562693953816751.5631 ether, 0x00################################ca173)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-3s, clients: 1, corpus: 28, objectives: 0, executions: 99, exec/sec: 0.000
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 41.52% Instruction Covered, 39.40% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-3s, clients: 1, corpus: 28, objectives: 0, executions: 99, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x94################################5ee1B, 28269563567683316151272708682438845225059893661594363262.5325 ether)
+       0x01
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.transferFrom(0x00################################00000, 0x00################################00000, 0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-3s, clients: 1, corpus: 29, objectives: 0, executions: 129, exec/sec: 0.000
+[32m INFO[0m [Stats #0] run time: 0h-0m-3s, clients: 1, corpus: 29, objectives: 0, executions: 129, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x00################################00000, 105312291668557186697918049461741915258956757056.5245 ether)
+       0x01
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.transferFrom{value: 36.8934 ether}(0x00################################00000, 0x55################################97955, 75451880669730060701041200541812503238497502194289995037182.7761 ether)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-3s, clients: 1, corpus: 30, objectives: 0, executions: 130, exec/sec: 0.000
+[32m INFO[0m [Stats #0] run time: 0h-0m-3s, clients: 1, corpus: 30, objectives: 0, executions: 130, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.transferFrom(0x68################################c9024, 0xe1################################c8510, 0)
+       0x01
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-3s, clients: 1, corpus: 31, objectives: 0, executions: 134, exec/sec: 0.000
+[32m INFO[0m [Stats #0] run time: 0h-0m-3s, clients: 1, corpus: 31, objectives: 0, executions: 134, exec/sec: 0.000
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+   [1] 0x94################################5ee1B.transferFrom(0x55################################97955, 0x8E################################d79dd, 7083.5497 ether)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-3s, clients: 1, corpus: 32, objectives: 0, executions: 138, exec/sec: 0.000
+[32m INFO[0m [Stats #0] run time: 0h-0m-4s, clients: 1, corpus: 32, objectives: 0, executions: 138, exec/sec: 96.66
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x00################################00000, 105312291668557186697918049461741915258956757056.5245 ether)
+       0x01
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.transferFrom(0x94################################5ee1B, 0x68################################c9024, 3212)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-4s, clients: 1, corpus: 33, objectives: 0, executions: 145, exec/sec: 101.5
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 47.26% Instruction Covered, 41.39% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-4s, clients: 1, corpus: 33, objectives: 0, executions: 160, exec/sec: 87.10
+[32m INFO[0m [Stats #0] run time: 0h-0m-4s, clients: 1, corpus: 33, objectives: 0, executions: 160, exec/sec: 87.09
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x00################################00000, 916224375930301716986430173589589211570750237697.1649 ether)
+       0x01
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.contractSpend(0x00################################00000, 3396758765490638098828828808589431932162252354016.3825 ether)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-4s, clients: 1, corpus: 34, objectives: 0, executions: 161, exec/sec: 87.59
+[32m INFO[0m [Stats #0] run time: 0h-0m-4s, clients: 1, corpus: 34, objectives: 0, executions: 161, exec/sec: 79.37
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.contractSpend{value: 17179869184}(0x68################################c9024, 14477545295730867558105944409280837596680047454049338140795.2723 ether)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-4s, clients: 1, corpus: 35, objectives: 0, executions: 168, exec/sec: 82.77
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 47.33% Instruction Covered, 41.72% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-5s, clients: 1, corpus: 35, objectives: 0, executions: 168, exec/sec: 67.15
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x8E################################d79dd
+   [1] 0x94################################5ee1B.burn(9)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-5s, clients: 1, corpus: 36, objectives: 0, executions: 193, exec/sec: 77.12
+[32m INFO[0m [Stats #0] run time: 0h-0m-5s, clients: 1, corpus: 36, objectives: 0, executions: 193, exec/sec: 77.11
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x8E################################d79dd
+   [1] 0x94################################5ee1B.burn{value: 2973.7419 ether}(105361744239804047085980811478673910137236059113718722963975.8975 ether)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-5s, clients: 1, corpus: 37, objectives: 0, executions: 194, exec/sec: 77.50
+[32m INFO[0m [Stats #0] run time: 0h-0m-5s, clients: 1, corpus: 37, objectives: 0, executions: 194, exec/sec: 77.49
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x68################################c9024, 452312848583266388373324160190187140051835877600158453281.4370 ether)
+       0x01
+[Sender] 0x8E################################d79dd
+   [1] 0x94################################5ee1B.burn(0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-5s, clients: 1, corpus: 38, objectives: 0, executions: 197, exec/sec: 78.67
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 47.46% Instruction Covered, 42.38% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-5s, clients: 1, corpus: 38, objectives: 0, executions: 197, exec/sec: 78.52
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x00################################00000, 916224375930301716986430173589589211570750237697.1649 ether)
+       0x01
+[Sender] 0x8E################################d79dd
+   [1] 0x94################################5ee1B.approve(0x00################################00000, 3461)
+       0x01
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.startOffering{value: 1045.3522 ether}(0, 0, 4686120134351470403267491832446599560803798053105255236301.1022 ether, 0, false)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-5s, clients: 1, corpus: 39, objectives: 0, executions: 225, exec/sec: 89.66
+[32m INFO[0m [Stats #0] run time: 0h-0m-5s, clients: 1, corpus: 39, objectives: 0, executions: 225, exec/sec: 89.65
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.startOffering(0, 0, 0, 0, true)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-5s, clients: 1, corpus: 40, objectives: 0, executions: 226, exec/sec: 90.04
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 47.53% Instruction Covered, 42.72% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-5s, clients: 1, corpus: 40, objectives: 0, executions: 226, exec/sec: 89.92
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.approve(0x94################################5ee1B, 2261785233651818570918414591732695222987031829844730667598.4795 ether)
+       0x01
+   [1] 0x94################################5ee1B.decreaseApproval(0x00################################00000, 36)
+       0x01
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-5s, clients: 1, corpus: 41, objectives: 0, executions: 257, exec/sec: 102.2
+[32m INFO[0m [Stats #0] run time: 0h-0m-5s, clients: 1, corpus: 41, objectives: 0, executions: 257, exec/sec: 102.2
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.decreaseApproval(0x00################################00000, 0)
+       0x01
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-5s, clients: 1, corpus: 42, objectives: 0, executions: 260, exec/sec: 103.4
+[32m INFO[0m [Stats #0] run time: 0h-0m-5s, clients: 1, corpus: 42, objectives: 0, executions: 260, exec/sec: 96.49
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.decreaseApproval{value: 1108.4020 ether}(0x68################################c9024, 1693140278639096010658016651013138965554800567755983293.4454 ether)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-5s, clients: 1, corpus: 43, objectives: 0, executions: 264, exec/sec: 97.94
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 48.29% Instruction Covered, 43.38% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 43, objectives: 0, executions: 288, exec/sec: 73.24
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 43, objectives: 0, executions: 288, exec/sec: 73.23
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.updateEndTime(1633164072574601990953054573984363195911704189756.3440 ether)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 44, objectives: 0, executions: 289, exec/sec: 73.47
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 44, objectives: 0, executions: 289, exec/sec: 73.40
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0xe1################################c8510, 34399247390538149489073813852552779274301622913942318240.8360 ether)
+       0x01
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.updateEndTime{value: 1026.1707 ether}(34808372744058156209846762870879204999637008643077044465.6333 ether)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 45, objectives: 0, executions: 313, exec/sec: 79.49
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 48.36% Instruction Covered, 43.71% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 45, objectives: 0, executions: 313, exec/sec: 79.40
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.resumeOffering{value: 187842794346}()
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 46, objectives: 0, executions: 321, exec/sec: 81.41
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 46, objectives: 0, executions: 321, exec/sec: 81.41
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.resumeOffering()
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 47, objectives: 0, executions: 322, exec/sec: 81.65
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 48.42% Instruction Covered, 44.04% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 47, objectives: 0, executions: 322, exec/sec: 81.58
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.batchTransfer((0x00################################00000), (0))
+       0x01
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 48, objectives: 0, executions: 353, exec/sec: 89.42
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 48, objectives: 0, executions: 353, exec/sec: 89.42
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x8E################################d79dd
+   [1] 0x94################################5ee1B.batchTransfer((), (27055390752289402522082829925494236623908949214502.7881 ether))
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 49, objectives: 0, executions: 354, exec/sec: 89.66
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 49, objectives: 0, executions: 354, exec/sec: 89.65
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.batchTransfer{value: 2155.5227 ether}((), (2113896843081389232710379732519637817636791300.8114 ether))
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 50, objectives: 0, executions: 356, exec/sec: 90.15
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 50, objectives: 0, executions: 356, exec/sec: 90.14
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.batchTransfer((0x68################################c9024), (0, 0, 0, 6255023563854845783602897588818030677895595254069559.4241 ether, 0, 0))
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 51, objectives: 0, executions: 358, exec/sec: 90.64
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 51, objectives: 0, executions: 358, exec/sec: 90.63
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0xe1################################c8510, 34399247390538149489073813852552779274301622913942318240.8360 ether)
+       0x01
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.batchTransfer((0x00################################00000), (34401727705631527347934923263612711246914313725094342995.8881 ether))
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 52, objectives: 0, executions: 359, exec/sec: 90.87
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 48.69% Instruction Covered, 45.70% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 52, objectives: 0, executions: 359, exec/sec: 90.75
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+   [1] 0x94################################5ee1B.endOffering{value: 1}()
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 53, objectives: 0, executions: 385, exec/sec: 97.31
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 53, objectives: 0, executions: 385, exec/sec: 97.30
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0xe1################################c8510, 34399247390538149489073813852552779274301622913942318240.8360 ether)
+       0x01
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.endOffering()
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 54, objectives: 0, executions: 387, exec/sec: 97.80
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 48.76% Instruction Covered, 46.03% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 54, objectives: 0, executions: 387, exec/sec: 97.67
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x00################################00000, 105312291668557186697918049461741915258956757056.5245 ether)
+       0x01
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.transfer(0x68################################c9024, 105312294807108054391258431379636626942018125242.3360 ether)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 55, objectives: 0, executions: 417, exec/sec: 105.2
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 55, objectives: 0, executions: 417, exec/sec: 105.2
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x00################################00000, 105312291668557186697918049461741915258956757056.5245 ether)
+       0x01
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.transfer(0x00################################00000, 0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 56, objectives: 0, executions: 418, exec/sec: 105.4
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 56, objectives: 0, executions: 418, exec/sec: 105.4
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.transfer(0x94################################5ee1B, 0)
+       0x01
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 57, objectives: 0, executions: 422, exec/sec: 106.4
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 57, objectives: 0, executions: 422, exec/sec: 106.4
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.transfer{value: 5790}(0x35################################31dDb, 4069)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 58, objectives: 0, executions: 428, exec/sec: 107.9
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 51.91% Instruction Covered, 47.35% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 58, objectives: 0, executions: 428, exec/sec: 107.7
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.addContract(0xe1################################c8510, 0x8E################################d79dd)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 59, objectives: 0, executions: 449, exec/sec: 112.9
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 59, objectives: 0, executions: 449, exec/sec: 112.9
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.addContract{value: 4574.7936 ether}(0xe1################################c8510, 0x35################################31dDb)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 60, objectives: 0, executions: 453, exec/sec: 113.9
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 51.98% Instruction Covered, 47.68% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 60, objectives: 0, executions: 453, exec/sec: 113.6
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.removeContract(0x00################################00000)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 61, objectives: 0, executions: 481, exec/sec: 120.7
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 61, objectives: 0, executions: 481, exec/sec: 120.6
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.removeContract{value: 3328.3982 ether}(0x00################################00000)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 62, objectives: 0, executions: 492, exec/sec: 123.4
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 52.05% Instruction Covered, 48.01% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 62, objectives: 0, executions: 492, exec/sec: 123.3
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0xe1################################c8510, 34399247390538149489073813852552779274301622913942318240.8360 ether)
+       0x01
+   [1] 0x94################################5ee1B.approve(0xe1################################c8510, 62279047451899471343452591349901782977054998910438907.6140 ether)
+       0x01
+[Sender] 0x8E################################d79dd
+   [1] 0x94################################5ee1B.stopOffering()
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 63, objectives: 0, executions: 513, exec/sec: 128.5
+[32m INFO[0m [Stats #0] run time: 0h-0m-6s, clients: 1, corpus: 63, objectives: 0, executions: 513, exec/sec: 128.5
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+[Sender] 0x8E################################d79dd
+   [1] 0x94################################5ee1B.stopOffering{value: 35.6745 ether}()
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-6s, clients: 1, corpus: 64, objectives: 0, executions: 514, exec/sec: 128.7
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 52.11% Instruction Covered, 48.34% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-7s, clients: 1, corpus: 64, objectives: 0, executions: 514, exec/sec: 122.5
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.approve(0x35################################31dDb, 9)
+       0x01
+   [1] 0x94################################5ee1B.increaseApproval(0x55################################97955, 0)
+       0x01
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-7s, clients: 1, corpus: 65, objectives: 0, executions: 543, exec/sec: 129.4
+[32m INFO[0m [Stats #0] run time: 0h-0m-7s, clients: 1, corpus: 65, objectives: 0, executions: 543, exec/sec: 129.4
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.increaseApproval(0x00################################00000, 243094766688060439267667063727968180308963209998180726.7429 ether)
+       0x01
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-7s, clients: 1, corpus: 66, objectives: 0, executions: 544, exec/sec: 129.6
+[32m INFO[0m [Stats #0] run time: 0h-0m-8s, clients: 1, corpus: 66, objectives: 0, executions: 544, exec/sec: 100.9
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0x94################################5ee1B, 28269563567683316151272708682438845225059893661594363262.5325 ether)
+       0x01
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.increaseApproval{value: 2602.6805 ether}(0x00################################00000, 0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-8s, clients: 1, corpus: 67, objectives: 0, executions: 565, exec/sec: 104.8
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 52.18% Instruction Covered, 48.68% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-8s, clients: 1, corpus: 67, objectives: 0, executions: 574, exec/sec: 106.3
+[32m INFO[0m [Stats #0] run time: 0h-0m-8s, clients: 1, corpus: 67, objectives: 0, executions: 574, exec/sec: 106.3
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x8E################################d79dd
+   [1] 0x94################################5ee1B.setBonusRate(0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-8s, clients: 1, corpus: 68, objectives: 0, executions: 575, exec/sec: 106.5
+[32m INFO[0m [Stats #0] run time: 0h-0m-8s, clients: 1, corpus: 68, objectives: 0, executions: 575, exec/sec: 106.5
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x35################################31dDb
+   [1] 0x94################################5ee1B.approve(0xe1################################c8510, 34399247390538149489073813852552779274301622913942318240.8360 ether)
+       0x01
+[Sender] 0x8E################################d79dd
+   [1] 0x94################################5ee1B.setBonusRate{value: 4422.6916 ether}(0)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-8s, clients: 1, corpus: 69, objectives: 0, executions: 576, exec/sec: 106.7
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 52.25% Instruction Covered, 49.01% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-8s, clients: 1, corpus: 69, objectives: 0, executions: 576, exec/sec: 106.5
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.updateBurnableStatus(false)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-8s, clients: 1, corpus: 70, objectives: 0, executions: 607, exec/sec: 112.3
+[32m INFO[0m [Stats #0] run time: 0h-0m-8s, clients: 1, corpus: 70, objectives: 0, executions: 607, exec/sec: 112.2
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.increaseApproval(0x00################################00000, 243094766688060439267667063727968180308963209998180726.7429 ether)
+       0x01
+   [1] 0x94################################5ee1B.updateBurnableStatus{value: 832031670}(true)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-8s, clients: 1, corpus: 71, objectives: 0, executions: 623, exec/sec: 115.2
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 52.31% Instruction Covered, 49.34% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-8s, clients: 1, corpus: 71, objectives: 0, executions: 623, exec/sec: 115.1
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.transferOwnership(0xe1################################c8510)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-8s, clients: 1, corpus: 72, objectives: 0, executions: 639, exec/sec: 118.1
+[32m INFO[0m [Stats #0] run time: 0h-0m-8s, clients: 1, corpus: 72, objectives: 0, executions: 639, exec/sec: 118.1
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.transferOwnership{value: 310.9887 ether}(0x00################################00000)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-8s, clients: 1, corpus: 73, objectives: 0, executions: 648, exec/sec: 119.7
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 52.38% Instruction Covered, 49.67% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-8s, clients: 1, corpus: 73, objectives: 0, executions: 648, exec/sec: 119.7
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.increaseApproval(0xe1################################c8510, 1619301433447439418213984137797656620.1668 ether)
+       0x01
+   [1] 0x94################################5ee1B.fallback(0x00################################efda7)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-8s, clients: 1, corpus: 74, objectives: 0, executions: 671, exec/sec: 123.9
+[32m INFO[0m [Stats #0] run time: 0h-0m-9s, clients: 1, corpus: 74, objectives: 0, executions: 671, exec/sec: 104.2
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0xe1################################c8510
+   [1] 0x94################################5ee1B.fallback{value: 4250}(0xe6################################fe6e6)
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-9s, clients: 1, corpus: 75, objectives: 0, executions: 675, exec/sec: 104.8
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 54.06% Instruction Covered, 52.65% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-9s, clients: 1, corpus: 75, objectives: 0, executions: 702, exec/sec: 108.8
+[32m INFO[0m [Stats #0] run time: 0h-0m-10s, clients: 1, corpus: 75, objectives: 0, executions: 1054, exec/sec: 141.3
+[32m INFO[0m [Stats #0] run time: 0h-0m-11s, clients: 1, corpus: 75, objectives: 0, executions: 1342, exec/sec: 158.0
+[32m INFO[0m [Stats #0] run time: 0h-0m-12s, clients: 1, corpus: 75, objectives: 0, executions: 2968, exec/sec: 310.1
+[32m INFO[0m [Stats #0] run time: 0h-0m-13s, clients: 1, corpus: 75, objectives: 0, executions: 10152, exec/sec: 943.8
+[32m INFO[0m [Stats #0] run time: 0h-0m-14s, clients: 1, corpus: 75, objectives: 0, executions: 18071, exec/sec: 1.537k
+[32m INFO[0m [Stats #0] run time: 0h-0m-14s, clients: 1, corpus: 75, objectives: 0, executions: 18071, exec/sec: 1.535k
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.batchTransfer((0x00################################00000, 0x00################################00000, 0x35################################31dDb, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x35################################31dDb, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x94################################5ee1B, 0x00################################00000), (0, 0, 0, 0, 0, 0, 0, 0, 1716432386818138360948636779010251579958037667250897.7429 ether, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-14s, clients: 1, corpus: 76, objectives: 0, executions: 18378, exec/sec: 1.561k
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 54.06% Instruction Covered, 52.65% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-14s, clients: 1, corpus: 76, objectives: 0, executions: 18378, exec/sec: 1.524k
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? true 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.batchTransfer((0x00################################00000, 0x00################################00000, 0x35################################31dDb, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x10################################6024E, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x94################################5ee1B, 0x00################################00000), (0, 0, 0, 0, 0, 0, 0, 186956542853173733974010227196623736376526455889032547.8750 ether, 1716432386818138360948636779010251579958037667250897.7429 ether, 0, 13770978191951857727748737776091914098140312691149732897466.9460 ether, 115792089237316195423570984634543488783671123537257493510713.3047 ether, 0, 0, 0, 0, 0, 0))
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-14s, clients: 1, corpus: 77, objectives: 0, executions: 24026, exec/sec: 1.992k
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 54.06% Instruction Covered, 52.98% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-15s, clients: 1, corpus: 77, objectives: 0, executions: 24026, exec/sec: 1.939k
+[32m INFO[0m ============= New Corpus Item =============
+[32m INFO[0m Reverted? false 
+ Txn:
+[Sender] 0x68################################c9024
+   [1] 0x94################################5ee1B.batchTransfer((0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x35################################31dDb, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000, 0x00################################00000), (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+       0x01
+
+[32m INFO[0m ==========================================
+[32m INFO[0m [Testcase #0] run time: 0h-0m-15s, clients: 1, corpus: 78, objectives: 0, executions: 30598, exec/sec: 2.470k
+[32m INFO[0m ============= Coverage Summary =============
+[32m INFO[0m 0x94################################5ee1b: 54.06% Instruction Covered, 52.98% Branch Covered
+[32m INFO[0m [Stats #0] run time: 0h-0m-15s, clients: 1, corpus: 78, objectives: 0, executions: 34142, exec/sec: 2.672k
+[32m INFO[0m [Stats #0] run time: 0h-0m-16s, clients: 1, corpus: 78, objectives: 0, executions: 46601, exec/sec: 3.368k
+[32m INFO[0m [Stats #0] run time: 0h-0m-17s, clients: 1, corpus: 78, objectives: 0, executions: 65190, exec/sec: 4.394k
+[32m INFO[0m [Stats #0] run time: 0h-0m-18s, clients: 1, corpus: 78, objectives: 0, executions: 80272, exec/sec: 5.068k
+[32m INFO[0m [Stats #0] run time: 0h-0m-19s, clients: 1, corpus: 78, objectives: 0, executions: 95002, exec/sec: 5.642k
+[32m INFO[0m [Stats #0] run time: 0h-0m-20s, clients: 1, corpus: 78, objectives: 0, executions: 113690, exec/sec: 6.372k
+[32m INFO[0m [Stats #0] run time: 0h-0m-21s, clients: 1, corpus: 78, objectives: 0, executions: 132305, exec/sec: 7.022k
+[32m INFO[0m [Stats #0] run time: 0h-0m-22s, clients: 1, corpus: 78, objectives: 0, executions: 150963, exec/sec: 7.608k
+[32m INFO[0m [Stats #0] run time: 0h-0m-23s, clients: 1, corpus: 78, objectives: 0, executions: 169340, exec/sec: 8.125k
+[32m INFO[0m [Stats #0] run time: 0h-0m-24s, clients: 1, corpus: 78, objectives: 0, executions: 188564, exec/sec: 8.633k
+[32m INFO[0m [Stats #0] run time: 0h-0m-25s, clients: 1, corpus: 78, objectives: 0, executions: 207787, exec/sec: 9.096k
+[32m INFO[0m [Stats #0] run time: 0h-0m-26s, clients: 1, corpus: 78, objectives: 0, executions: 226879, exec/sec: 9.515k
+[32m INFO[0m [Stats #0] run time: 0h-0m-27s, clients: 1, corpus: 78, objectives: 0, executions: 245721, exec/sec: 9.890k
+[32m INFO[0m [Stats #0] run time: 0h-0m-28s, clients: 1, corpus: 78, objectives: 0, executions: 264565, exec/sec: 10.24k
+[32m INFO[0m [Stats #0] run time: 0h-0m-29s, clients: 1, corpus: 78, objectives: 0, executions: 283311, exec/sec: 10.55k
+[32m INFO[0m [Stats #0] run time: 0h-0m-30s, clients: 1, corpus: 78, objectives: 0, executions: 302189, exec/sec: 10.85k
+[32m INFO[0m [Stats #0] run time: 0h-0m-31s, clients: 1, corpus: 78, objectives: 0, executions: 320363, exec/sec: 11.11k
+[32m INFO[0m [Stats #0] run time: 0h-0m-32s, clients: 1, corpus: 78, objectives: 0, executions: 338728, exec/sec: 11.35k
+[32m INFO[0m [Stats #0] run time: 0h-0m-33s, clients: 1, corpus: 78, objectives: 0, executions: 357734, exec/sec: 11.60k
+[32m INFO[0m [Stats #0] run time: 0h-0m-34s, clients: 1, corpus: 78, objectives: 0, executions: 376913, exec/sec: 11.83k
+[32m INFO[0m [Stats #0] run time: 0h-0m-35s, clients: 1, corpus: 78, objectives: 0, executions: 395753, exec/sec: 12.05k
+[32m INFO[0m [Stats #0] run time: 0h-0m-36s, clients: 1, corpus: 78, objectives: 0, executions: 414946, exec/sec: 12.26k
+[32m INFO[0m [Stats #0] run time: 0h-0m-37s, clients: 1, corpus: 78, objectives: 0, executions: 433310, exec/sec: 12.43k
+[32m INFO[0m [Stats #0] run time: 0h-0m-38s, clients: 1, corpus: 78, objectives: 0, executions: 452415, exec/sec: 12.62k
+[32m INFO[0m [Stats #0] run time: 0h-0m-39s, clients: 1, corpus: 78, objectives: 0, executions: 471332, exec/sec: 12.79k
+[32m INFO[0m [Stats #0] run time: 0h-0m-40s, clients: 1, corpus: 78, objectives: 0, executions: 490179, exec/sec: 12.95k
+[32m INFO[0m [Stats #0] run time: 0h-0m-41s, clients: 1, corpus: 78, objectives: 0, executions: 509470, exec/sec: 13.11k
+[32m INFO[0m [Stats #0] run time: 0h-0m-42s, clients: 1, corpus: 78, objectives: 0, executions: 528442, exec/sec: 13.26k
+[32m INFO[0m [Stats #0] run time: 0h-0m-43s, clients: 1, corpus: 78, objectives: 0, executions: 547283, exec/sec: 13.39k
+[32m INFO[0m [Stats #0] run time: 0h-0m-44s, clients: 1, corpus: 78, objectives: 0, executions: 566284, exec/sec: 13.53k
+[32m INFO[0m [Stats #0] run time: 0h-0m-45s, clients: 1, corpus: 78, objectives: 0, executions: 584997, exec/sec: 13.65k
+[32m INFO[0m [Stats #0] run time: 0h-0m-46s, clients: 1, corpus: 78, objectives: 0, executions: 603596, exec/sec: 13.76k
+[32m INFO[0m [Stats #0] run time: 0h-0m-47s, clients: 1, corpus: 78, objectives: 0, executions: 621953, exec/sec: 13.86k
+[32m INFO[0m [Stats #0] run time: 0h-0m-48s, clients: 1, corpus: 78, objectives: 0, executions: 640741, exec/sec: 13.97k
+[32m INFO[0m [Stats #0] run time: 0h-0m-49s, clients: 1, corpus: 78, objectives: 0, executions: 659541, exec/sec: 14.07k
+[32m INFO[0m [Stats #0] run time: 0h-0m-50s, clients: 1, corpus: 78, objectives: 0, executions: 678331, exec/sec: 14.17k
+[32m INFO[0m [Stats #0] run time: 0h-0m-51s, clients: 1, corpus: 78, objectives: 0, executions: 697620, exec/sec: 14.27k
+[32m INFO[0m [Stats #0] run time: 0h-0m-52s, clients: 1, corpus: 78, objectives: 0, executions: 716882, exec/sec: 14.37k
+[32m INFO[0m [Stats #0] run time: 0h-0m-53s, clients: 1, corpus: 78, objectives: 0, executions: 736232, exec/sec: 14.47k
+[32m INFO[0m [Stats #0] run time: 0h-0m-54s, clients: 1, corpus: 78, objectives: 0, executions: 755712, exec/sec: 14.57k
+[32m INFO[0m [Stats #0] run time: 0h-0m-55s, clients: 1, corpus: 78, objectives: 0, executions: 774691, exec/sec: 14.65k
+[32m INFO[0m [Stats #0] run time: 0h-0m-56s, clients: 1, corpus: 78, objectives: 0, executions: 793827, exec/sec: 14.73k
+[32m INFO[0m [Stats #0] run time: 0h-0m-57s, clients: 1, corpus: 78, objectives: 0, executions: 812165, exec/sec: 14.80k
+[32m INFO[0m [Stats #0] run time: 0h-0m-58s, clients: 1, corpus: 78, objectives: 0, executions: 831266, exec/sec: 14.88k
+[32m INFO[0m [Stats #0] run time: 0h-0m-59s, clients: 1, corpus: 78, objectives: 0, executions: 850748, exec/sec: 14.96k
+[32m INFO[0m [Stats #0] run time: 0h-1m-0s, clients: 1, corpus: 78, objectives: 0, executions: 869886, exec/sec: 15.03k
+[32m INFO[0m [Stats #0] run time: 0h-1m-1s, clients: 1, corpus: 78, objectives: 0, executions: 888824, exec/sec: 15.09k
+[32m INFO[0m [Stats #0] run time: 0h-1m-2s, clients: 1, corpus: 78, objectives: 0, executions: 908151, exec/sec: 15.17k
+[32m INFO[0m [Stats #0] run time: 0h-1m-3s, clients: 1, corpus: 78, objectives: 0, executions: 926810, exec/sec: 15.22k
+[32m INFO[0m [Stats #0] run time: 0h-1m-4s, clients: 1, corpus: 78, objectives: 0, executions: 945898, exec/sec: 15.28k
+[32m INFO[0m [Stats #0] run time: 0h-1m-5s, clients: 1, corpus: 78, objectives: 0, executions: 965250, exec/sec: 15.35k
+[32m INFO[0m [Stats #0] run time: 0h-1m-6s, clients: 1, corpus: 78, objectives: 0, executions: 983908, exec/sec: 15.40k
+[32m INFO[0m [Stats #0] run time: 0h-1m-7s, clients: 1, corpus: 78, objectives: 0, executions: 1002727, exec/sec: 15.45k
+[32m INFO[0m [Stats #0] run time: 0h-1m-8s, clients: 1, corpus: 78, objectives: 0, executions: 1021144, exec/sec: 15.50k
+[32m INFO[0m [Stats #0] run time: 0h-1m-9s, clients: 1, corpus: 78, objectives: 0, executions: 1040311, exec/sec: 15.55k
+[32m INFO[0m [Stats #0] run time: 0h-1m-10s, clients: 1, corpus: 78, objectives: 0, executions: 1059575, exec/sec: 15.61k
+[32m INFO[0m [Stats #0] run time: 0h-1m-11s, clients: 1, corpus: 78, objectives: 0, executions: 1078577, exec/sec: 15.66k
+[32m INFO[0m [Stats #0] run time: 0h-1m-12s, clients: 1, corpus: 78, objectives: 0, executions: 1097808, exec/sec: 15.71k
+[32m INFO[0m [Stats #0] run time: 0h-1m-13s, clients: 1, corpus: 78, objectives: 0, executions: 1117161, exec/sec: 15.76k
+[32m INFO[0m [Stats #0] run time: 0h-1m-14s, clients: 1, corpus: 78, objectives: 0, executions: 1136217, exec/sec: 15.80k
+[32m INFO[0m [Stats #0] run time: 0h-1m-15s, clients: 1, corpus: 78, objectives: 0, executions: 1155411, exec/sec: 15.85k
+[32m INFO[0m [Stats #0] run time: 0h-1m-16s, clients: 1, corpus: 78, objectives: 0, executions: 1174834, exec/sec: 15.90k
+[32m INFO[0m [Stats #0] run time: 0h-1m-17s, clients: 1, corpus: 78, objectives: 0, executions: 1193901, exec/sec: 15.94k
+[32m INFO[0m [Stats #0] run time: 0h-1m-18s, clients: 1, corpus: 78, objectives: 0, executions: 1212990, exec/sec: 15.98k
+[32m INFO[0m [Stats #0] run time: 0h-1m-19s, clients: 1, corpus: 78, objectives: 0, executions: 1232275, exec/sec: 16.02k
+[32m INFO[0m [Stats #0] run time: 0h-1m-20s, clients: 1, corpus: 78, objectives: 0, executions: 1251633, exec/sec: 16.07k
+[32m INFO[0m [Stats #0] run time: 0h-1m-21s, clients: 1, corpus: 78, objectives: 0, executions: 1270828, exec/sec: 16.11k
+[32m INFO[0m [Stats #0] run time: 0h-1m-22s, clients: 1, corpus: 78, objectives: 0, executions: 1289999, exec/sec: 16.15k
+[32m INFO[0m [Stats #0] run time: 0h-1m-23s, clients: 1, corpus: 78, objectives: 0, executions: 1309292, exec/sec: 16.18k
+[32m INFO[0m [Stats #0] run time: 0h-1m-24s, clients: 1, corpus: 78, objectives: 0, executions: 1328405, exec/sec: 16.22k
+[32m INFO[0m [Stats #0] run time: 0h-1m-25s, clients: 1, corpus: 78, objectives: 0, executions: 1347511, exec/sec: 16.25k
+[32m INFO[0m [Stats #0] run time: 0h-1m-26s, clients: 1, corpus: 78, objectives: 0, executions: 1366871, exec/sec: 16.29k
+[32m INFO[0m [Stats #0] run time: 0h-1m-27s, clients: 1, corpus: 78, objectives: 0, executions: 1385967, exec/sec: 16.32k
+[32m INFO[0m [Stats #0] run time: 0h-1m-28s, clients: 1, corpus: 78, objectives: 0, executions: 1404877, exec/sec: 16.35k
+[32m INFO[0m [Stats #0] run time: 0h-1m-29s, clients: 1, corpus: 78, objectives: 0, executions: 1424174, exec/sec: 16.39k
+[32m INFO[0m [Stats #0] run time: 0h-1m-30s, clients: 1, corpus: 78, objectives: 0, executions: 1443557, exec/sec: 16.42k
+[32m INFO[0m [Stats #0] run time: 0h-1m-31s, clients: 1, corpus: 78, objectives: 0, executions: 1462753, exec/sec: 16.45k
+[32m INFO[0m [Stats #0] run time: 0h-1m-32s, clients: 1, corpus: 78, objectives: 0, executions: 1481837, exec/sec: 16.48k
+[32m INFO[0m [Stats #0] run time: 0h-1m-33s, clients: 1, corpus: 78, objectives: 0, executions: 1501357, exec/sec: 16.51k
+[32m INFO[0m [Stats #0] run time: 0h-1m-34s, clients: 1, corpus: 78, objectives: 0, executions: 1520525, exec/sec: 16.54k
+[32m INFO[0m [Stats #0] run time: 0h-1m-35s, clients: 1, corpus: 78, objectives: 0, executions: 1539754, exec/sec: 16.57k
+[32m INFO[0m [Stats #0] run time: 0h-1m-36s, clients: 1, corpus: 78, objectives: 0, executions: 1558983, exec/sec: 16.60k
+[32m INFO[0m [Stats #0] run time: 0h-1m-37s, clients: 1, corpus: 78, objectives: 0, executions: 1578472, exec/sec: 16.63k
+[32m INFO[0m [Stats #0] run time: 0h-1m-38s, clients: 1, corpus: 78, objectives: 0, executions: 1597495, exec/sec: 16.65k
+[32m INFO[0m [Stats #0] run time: 0h-1m-39s, clients: 1, corpus: 78, objectives: 0, executions: 1616719, exec/sec: 16.68k
+[32m INFO[0m [Stats #0] run time: 0h-1m-40s, clients: 1, corpus: 78, objectives: 0, executions: 1635917, exec/sec: 16.71k
+[32m INFO[0m [Stats #0] run time: 0h-1m-41s, clients: 1, corpus: 78, objectives: 0, executions: 1655368, exec/sec: 16.73k
+[32m INFO[0m [Stats #0] run time: 0h-1m-42s, clients: 1, corpus: 78, objectives: 0, executions: 1674730, exec/sec: 16.76k
+[32m INFO[0m [Stats #0] run time: 0h-1m-43s, clients: 1, corpus: 78, objectives: 0, executions: 1693959, exec/sec: 16.78k
+[32m INFO[0m [Stats #0] run time: 0h-1m-44s, clients: 1, corpus: 78, objectives: 0, executions: 1713163, exec/sec: 16.81k
+[32m INFO[0m [Stats #0] run time: 0h-1m-45s, clients: 1, corpus: 78, objectives: 0, executions: 1732363, exec/sec: 16.83k
+[32m INFO[0m [Stats #0] run time: 0h-1m-46s, clients: 1, corpus: 78, objectives: 0, executions: 1751393, exec/sec: 16.85k
+[32m INFO[0m [Stats #0] run time: 0h-1m-47s, clients: 1, corpus: 78, objectives: 0, executions: 1770453, exec/sec: 16.87k
+[32m INFO[0m [Stats #0] run time: 0h-1m-48s, clients: 1, corpus: 78, objectives: 0, executions: 1789684, exec/sec: 16.89k
+[32m INFO[0m [Stats #0] run time: 0h-1m-49s, clients: 1, corpus: 78, objectives: 0, executions: 1808688, exec/sec: 16.91k
+[32m INFO[0m [Stats #0] run time: 0h-1m-50s, clients: 1, corpus: 78, objectives: 0, executions: 1827884, exec/sec: 16.93k
+[32m INFO[0m [Stats #0] run time: 0h-1m-51s, clients: 1, corpus: 78, objectives: 0, executions: 1847304, exec/sec: 16.96k
+[32m INFO[0m [Stats #0] run time: 0h-1m-52s, clients: 1, corpus: 78, objectives: 0, executions: 1866523, exec/sec: 16.98k
+[32m INFO[0m [Stats #0] run time: 0h-1m-53s, clients: 1, corpus: 78, objectives: 0, executions: 1885737, exec/sec: 17.00k
+[32m INFO[0m [Stats #0] run time: 0h-1m-54s, clients: 1, corpus: 78, objectives: 0, executions: 1904973, exec/sec: 17.02k
+[32m INFO[0m [Stats #0] run time: 0h-1m-55s, clients: 1, corpus: 78, objectives: 0, executions: 1924508, exec/sec: 17.04k
+[32m INFO[0m [Stats #0] run time: 0h-1m-56s, clients: 1, corpus: 78, objectives: 0, executions: 1943796, exec/sec: 17.06k
+[32m INFO[0m [Stats #0] run time: 0h-1m-57s, clients: 1, corpus: 78, objectives: 0, executions: 1962995, exec/sec: 17.08k
+[32m INFO[0m [Stats #0] run time: 0h-1m-58s, clients: 1, corpus: 78, objectives: 0, executions: 1982325, exec/sec: 17.10k
+[32m INFO[0m [Stats #0] run time: 0h-1m-59s, clients: 1, corpus: 78, objectives: 0, executions: 2001833, exec/sec: 17.12k
+[32m INFO[0m [Stats #0] run time: 0h-2m-0s, clients: 1, corpus: 78, objectives: 0, executions: 2021096, exec/sec: 17.13k
+[32m INFO[0m [Stats #0] run time: 0h-2m-1s, clients: 1, corpus: 78, objectives: 0, executions: 2040478, exec/sec: 17.15k
+[32m INFO[0m [Stats #0] run time: 0h-2m-2s, clients: 1, corpus: 78, objectives: 0, executions: 2059711, exec/sec: 17.17k
+[32m INFO[0m [Stats #0] run time: 0h-2m-3s, clients: 1, corpus: 78, objectives: 0, executions: 2078678, exec/sec: 17.18k
+[32m INFO[0m [Stats #0] run time: 0h-2m-4s, clients: 1, corpus: 78, objectives: 0, executions: 2097902, exec/sec: 17.20k
+[32m INFO[0m [Stats #0] run time: 0h-2m-5s, clients: 1, corpus: 78, objectives: 0, executions: 2117232, exec/sec: 17.22k
+[32m INFO[0m [Stats #0] run time: 0h-2m-6s, clients: 1, corpus: 78, objectives: 0, executions: 2136615, exec/sec: 17.24k
+[32m INFO[0m [Stats #0] run time: 0h-2m-7s, clients: 1, corpus: 78, objectives: 0, executions: 2156257, exec/sec: 17.25k
+[32m INFO[0m [Stats #0] run time: 0h-2m-8s, clients: 1, corpus: 78, objectives: 0, executions: 2175654, exec/sec: 17.27k
+[32m INFO[0m [Stats #0] run time: 0h-2m-9s, clients: 1, corpus: 78, objectives: 0, executions: 2194814, exec/sec: 17.29k
+[32m INFO[0m [Stats #0] run time: 0h-2m-10s, clients: 1, corpus: 78, objectives: 0, executions: 2214269, exec/sec: 17.30k
+[32m INFO[0m [Stats #0] run time: 0h-2m-11s, clients: 1, corpus: 78, objectives: 0, executions: 2233749, exec/sec: 17.32k
+[32m INFO[0m [Stats #0] run time: 0h-2m-12s, clients: 1, corpus: 78, objectives: 0, executions: 2253011, exec/sec: 17.33k
+[32m INFO[0m [Stats #0] run time: 0h-2m-13s, clients: 1, corpus: 78, objectives: 0, executions: 2272139, exec/sec: 17.35k
+[32m INFO[0m [Stats #0] run time: 0h-2m-14s, clients: 1, corpus: 78, objectives: 0, executions: 2291399, exec/sec: 17.36k
+[32m INFO[0m [Stats #0] run time: 0h-2m-15s, clients: 1, corpus: 78, objectives: 0, executions: 2311016, exec/sec: 17.38k
+[32m INFO[0m [Stats #0] run time: 0h-2m-16s, clients: 1, corpus: 78, objectives: 0, executions: 2330336, exec/sec: 17.39k
+[32m INFO[0m [Stats #0] run time: 0h-2m-17s, clients: 1, corpus: 78, objectives: 0, executions: 2349732, exec/sec: 17.41k
+[32m INFO[0m [Stats #0] run time: 0h-2m-18s, clients: 1, corpus: 78, objectives: 0, executions: 2369208, exec/sec: 17.42k
+[32m INFO[0m [Stats #0] run time: 0h-2m-19s, clients: 1, corpus: 78, objectives: 0, executions: 2388369, exec/sec: 17.44k
+[32m INFO[0m [Stats #0] run time: 0h-2m-20s, clients: 1, corpus: 78, objectives: 0, executions: 2407993, exec/sec: 17.45k
+[32m INFO[0m [Stats #0] run time: 0h-2m-21s, clients: 1, corpus: 78, objectives: 0, executions: 2427665, exec/sec: 17.47k
+[32m INFO[0m [Stats #0] run time: 0h-2m-22s, clients: 1, corpus: 78, objectives: 0, executions: 2446900, exec/sec: 17.48k
+[32m INFO[0m [Stats #0] run time: 0h-2m-23s, clients: 1, corpus: 78, objectives: 0, executions: 2466232, exec/sec: 17.49k
+[32m INFO[0m [Stats #0] run time: 0h-2m-24s, clients: 1, corpus: 78, objectives: 0, executions: 2485744, exec/sec: 17.51k
+[32m INFO[0m [Stats #0] run time: 0h-2m-25s, clients: 1, corpus: 78, objectives: 0, executions: 2505379, exec/sec: 17.52k
+[32m INFO[0m [Stats #0] run time: 0h-2m-26s, clients: 1, corpus: 78, objectives: 0, executions: 2524959, exec/sec: 17.54k
+[32m INFO[0m [Stats #0] run time: 0h-2m-27s, clients: 1, corpus: 78, objectives: 0, executions: 2544293, exec/sec: 17.55k
+[32m INFO[0m [Stats #0] run time: 0h-2m-28s, clients: 1, corpus: 78, objectives: 0, executions: 2563753, exec/sec: 17.56k
+[32m INFO[0m [Stats #0] run time: 0h-2m-29s, clients: 1, corpus: 78, objectives: 0, executions: 2583141, exec/sec: 17.57k
+[32m INFO[0m [Stats #0] run time: 0h-2m-30s, clients: 1, corpus: 78, objectives: 0, executions: 2602663, exec/sec: 17.59k
+[32m INFO[0m [Stats #0] run time: 0h-2m-31s, clients: 1, corpus: 78, objectives: 0, executions: 2622308, exec/sec: 17.60k
+[32m INFO[0m [Stats #0] run time: 0h-2m-32s, clients: 1, corpus: 78, objectives: 0, executions: 2641601, exec/sec: 17.61k
+[32m INFO[0m [Stats #0] run time: 0h-2m-33s, clients: 1, corpus: 78, objectives: 0, executions: 2661023, exec/sec: 17.62k
+[32m INFO[0m [Stats #0] run time: 0h-2m-34s, clients: 1, corpus: 78, objectives: 0, executions: 2680327, exec/sec: 17.63k
+[32m INFO[0m [Stats #0] run time: 0h-2m-35s, clients: 1, corpus: 78, objectives: 0, executions: 2699902, exec/sec: 17.65k
+[32m INFO[0m [Stats #0] run time: 0h-2m-36s, clients: 1, corpus: 78, objectives: 0, executions: 2719552, exec/sec: 17.66k
+[32m INFO[0m [Stats #0] run time: 0h-2m-37s, clients: 1, corpus: 78, objectives: 0, executions: 2738977, exec/sec: 17.67k
+[32m INFO[0m [Stats #0] run time: 0h-2m-38s, clients: 1, corpus: 78, objectives: 0, executions: 2758374, exec/sec: 17.68k
+[32m INFO[0m [Stats #0] run time: 0h-2m-39s, clients: 1, corpus: 78, objectives: 0, executions: 2777632, exec/sec: 17.69k
+[32m INFO[0m [Stats #0] run time: 0h-2m-40s, clients: 1, corpus: 78, objectives: 0, executions: 2796917, exec/sec: 17.70k
+[32m INFO[0m [Stats #0] run time: 0h-2m-41s, clients: 1, corpus: 78, objectives: 0, executions: 2816463, exec/sec: 17.71k
+[32m INFO[0m [Stats #0] run time: 0h-2m-42s, clients: 1, corpus: 78, objectives: 0, executions: 2835849, exec/sec: 17.72k
+[32m INFO[0m [Stats #0] run time: 0h-2m-43s, clients: 1, corpus: 78, objectives: 0, executions: 2855290, exec/sec: 17.73k
+[32m INFO[0m [Stats #0] run time: 0h-2m-44s, clients: 1, corpus: 78, objectives: 0, executions: 2874452, exec/sec: 17.74k
+[32m INFO[0m [Stats #0] run time: 0h-2m-45s, clients: 1, corpus: 78, objectives: 0, executions: 2893842, exec/sec: 17.75k
+[32m INFO[0m [Stats #0] run time: 0h-2m-46s, clients: 1, corpus: 78, objectives: 0, executions: 2913165, exec/sec: 17.76k
+[32m INFO[0m [Stats #0] run time: 0h-2m-47s, clients: 1, corpus: 78, objectives: 0, executions: 2932554, exec/sec: 17.77k
+[32m INFO[0m [Stats #0] run time: 0h-2m-48s, clients: 1, corpus: 78, objectives: 0, executions: 2951724, exec/sec: 17.78k
+[32m INFO[0m [Stats #0] run time: 0h-2m-49s, clients: 1, corpus: 78, objectives: 0, executions: 2971310, exec/sec: 17.79k
+[32m INFO[0m [Stats #0] run time: 0h-2m-50s, clients: 1, corpus: 78, objectives: 0, executions: 2990855, exec/sec: 17.80k
+[32m INFO[0m [Stats #0] run time: 0h-2m-51s, clients: 1, corpus: 78, objectives: 0, executions: 3009961, exec/sec: 17.81k
+[32m INFO[0m [Stats #0] run time: 0h-2m-52s, clients: 1, corpus: 78, objectives: 0, executions: 3029143, exec/sec: 17.82k
+[32m INFO[0m [Stats #0] run time: 0h-2m-53s, clients: 1, corpus: 78, objectives: 0, executions: 3048407, exec/sec: 17.83k
+[32m INFO[0m [Stats #0] run time: 0h-2m-54s, clients: 1, corpus: 78, objectives: 0, executions: 3067533, exec/sec: 17.83k
+[32m INFO[0m [Stats #0] run time: 0h-2m-55s, clients: 1, corpus: 78, objectives: 0, executions: 3087023, exec/sec: 17.84k
+[32m INFO[0m [Stats #0] run time: 0h-2m-56s, clients: 1, corpus: 78, objectives: 0, executions: 3106291, exec/sec: 17.85k
+[32m INFO[0m [Stats #0] run time: 0h-2m-57s, clients: 1, corpus: 78, objectives: 0, executions: 3125702, exec/sec: 17.86k
+[32m INFO[0m [Stats #0] run time: 0h-2m-58s, clients: 1, corpus: 78, objectives: 0, executions: 3145132, exec/sec: 17.87k
+[32m INFO[0m [Stats #0] run time: 0h-2m-59s, clients: 1, corpus: 78, objectives: 0, executions: 3164393, exec/sec: 17.88k
+[32m INFO[0m [Stats #0] run time: 0h-3m-0s, clients: 1, corpus: 78, objectives: 0, executions: 3183595, exec/sec: 17.88k
+[32m INFO[0m [Stats #0] run time: 0h-3m-1s, clients: 1, corpus: 78, objectives: 0, executions: 3203023, exec/sec: 17.89k
+[32m INFO[0m [Stats #0] run time: 0h-3m-2s, clients: 1, corpus: 78, objectives: 0, executions: 3222603, exec/sec: 17.90k
+[32m INFO[0m [Stats #0] run time: 0h-3m-3s, clients: 1, corpus: 78, objectives: 0, executions: 3241642, exec/sec: 17.91k
+[32m INFO[0m [Stats #0] run time: 0h-3m-4s, clients: 1, corpus: 78, objectives: 0, executions: 3260709, exec/sec: 17.91k
+[32m INFO[0m [Stats #0] run time: 0h-3m-5s, clients: 1, corpus: 78, objectives: 0, executions: 3280190, exec/sec: 17.92k
+[32m INFO[0m [Stats #0] run time: 0h-3m-6s, clients: 1, corpus: 78, objectives: 0, executions: 3299492, exec/sec: 17.93k
+[32m INFO[0m [Stats #0] run time: 0h-3m-7s, clients: 1, corpus: 78, objectives: 0, executions: 3318844, exec/sec: 17.94k
+[32m INFO[0m [Stats #0] run time: 0h-3m-8s, clients: 1, corpus: 78, objectives: 0, executions: 3338198, exec/sec: 17.94k
+[32m INFO[0m [Stats #0] run time: 0h-3m-9s, clients: 1, corpus: 78, objectives: 0, executions: 3357580, exec/sec: 17.95k
+[32m INFO[0m [Stats #0] run time: 0h-3m-10s, clients: 1, corpus: 78, objectives: 0, executions: 3376998, exec/sec: 17.96k
+[32m INFO[0m [Stats #0] run time: 0h-3m-11s, clients: 1, corpus: 78, objectives: 0, executions: 3396264, exec/sec: 17.97k
+[32m INFO[0m [Stats #0] run time: 0h-3m-12s, clients: 1, corpus: 78, objectives: 0, executions: 3415756, exec/sec: 17.97k
+[32m INFO[0m [Stats #0] run time: 0h-3m-13s, clients: 1, corpus: 78, objectives: 0, executions: 3434884, exec/sec: 17.98k
+[32m INFO[0m [Stats #0] run time: 0h-3m-14s, clients: 1, corpus: 78, objectives: 0, executions: 3454437, exec/sec: 17.99k
+[32m INFO[0m [Stats #0] run time: 0h-3m-15s, clients: 1, corpus: 78, objectives: 0, executions: 3473800, exec/sec: 17.99k
+[32m INFO[0m [Stats #0] run time: 0h-3m-16s, clients: 1, corpus: 78, objectives: 0, executions: 3493189, exec/sec: 18.00k
+[32m INFO[0m [Stats #0] run time: 0h-3m-17s, clients: 1, corpus: 78, objectives: 0, executions: 3512123, exec/sec: 18.01k
+[32m INFO[0m [Stats #0] run time: 0h-3m-18s, clients: 1, corpus: 78, objectives: 0, executions: 3531542, exec/sec: 18.01k
+[32m INFO[0m [Stats #0] run time: 0h-3m-19s, clients: 1, corpus: 78, objectives: 0, executions: 3550764, exec/sec: 18.02k
+[32m INFO[0m [Stats #0] run time: 0h-3m-20s, clients: 1, corpus: 78, objectives: 0, executions: 3569937, exec/sec: 18.03k
+[32m INFO[0m [Stats #0] run time: 0h-3m-21s, clients: 1, corpus: 78, objectives: 0, executions: 3589193, exec/sec: 18.03k
+[32m INFO[0m [Stats #0] run time: 0h-3m-22s, clients: 1, corpus: 78, objectives: 0, executions: 3608746, exec/sec: 18.04k
+[32m INFO[0m [Stats #0] run time: 0h-3m-23s, clients: 1, corpus: 78, objectives: 0, executions: 3628235, exec/sec: 18.05k
+[32m INFO[0m [Stats #0] run time: 0h-3m-24s, clients: 1, corpus: 78, objectives: 0, executions: 3647629, exec/sec: 18.05k
+[32m INFO[0m [Stats #0] run time: 0h-3m-25s, clients: 1, corpus: 78, objectives: 0, executions: 3666437, exec/sec: 18.06k
+[32m INFO[0m [Stats #0] run time: 0h-3m-26s, clients: 1, corpus: 78, objectives: 0, executions: 3685666, exec/sec: 18.06k
+[32m INFO[0m [Stats #0] run time: 0h-3m-27s, clients: 1, corpus: 78, objectives: 0, executions: 3704574, exec/sec: 18.06k
+[32m INFO[0m [Stats #0] run time: 0h-3m-28s, clients: 1, corpus: 78, objectives: 0, executions: 3723855, exec/sec: 18.07k
+[32m INFO[0m [Stats #0] run time: 0h-3m-29s, clients: 1, corpus: 78, objectives: 0, executions: 3743277, exec/sec: 18.08k
+[32m INFO[0m [Stats #0] run time: 0h-3m-30s, clients: 1, corpus: 78, objectives: 0, executions: 3762411, exec/sec: 18.08k
+[32m INFO[0m [Stats #0] run time: 0h-3m-31s, clients: 1, corpus: 78, objectives: 0, executions: 3781732, exec/sec: 18.09k
+[32m INFO[0m [Stats #0] run time: 0h-3m-32s, clients: 1, corpus: 78, objectives: 0, executions: 3801218, exec/sec: 18.09k
+[32m INFO[0m [Stats #0] run time: 0h-3m-33s, clients: 1, corpus: 78, objectives: 0, executions: 3820826, exec/sec: 18.10k
+[32m INFO[0m [Stats #0] run time: 0h-3m-34s, clients: 1, corpus: 78, objectives: 0, executions: 3840157, exec/sec: 18.11k
+[32m INFO[0m [Stats #0] run time: 0h-3m-35s, clients: 1, corpus: 78, objectives: 0, executions: 3859486, exec/sec: 18.11k
+[32m INFO[0m [Stats #0] run time: 0h-3m-36s, clients: 1, corpus: 78, objectives: 0, executions: 3878689, exec/sec: 18.12k
+[32m INFO[0m [Stats #0] run time: 0h-3m-37s, clients: 1, corpus: 78, objectives: 0, executions: 3898153, exec/sec: 18.12k
+[32m INFO[0m [Stats #0] run time: 0h-3m-38s, clients: 1, corpus: 78, objectives: 0, executions: 3917702, exec/sec: 18.13k
+[32m INFO[0m [Stats #0] run time: 0h-3m-39s, clients: 1, corpus: 78, objectives: 0, executions: 3936970, exec/sec: 18.14k
+[32m INFO[0m [Stats #0] run time: 0h-3m-40s, clients: 1, corpus: 78, objectives: 0, executions: 3956268, exec/sec: 18.14k
+[32m INFO[0m [Stats #0] run time: 0h-3m-41s, clients: 1, corpus: 78, objectives: 0, executions: 3975564, exec/sec: 18.15k
+[32m INFO[0m [Stats #0] run time: 0h-3m-42s, clients: 1, corpus: 78, objectives: 0, executions: 3995114, exec/sec: 18.15k
+[32m INFO[0m [Stats #0] run time: 0h-3m-43s, clients: 1, corpus: 78, objectives: 0, executions: 4014373, exec/sec: 18.16k
+[32m INFO[0m [Stats #0] run time: 0h-3m-44s, clients: 1, corpus: 78, objectives: 0, executions: 4033698, exec/sec: 18.16k
+[32m INFO[0m [Stats #0] run time: 0h-3m-45s, clients: 1, corpus: 78, objectives: 0, executions: 4052935, exec/sec: 18.17k
+[32m INFO[0m [Stats #0] run time: 0h-3m-46s, clients: 1, corpus: 78, objectives: 0, executions: 4072462, exec/sec: 18.17k
+[32m INFO[0m [Stats #0] run time: 0h-3m-47s, clients: 1, corpus: 78, objectives: 0, executions: 4091756, exec/sec: 18.18k
+[32m INFO[0m [Stats #0] run time: 0h-3m-48s, clients: 1, corpus: 78, objectives: 0, executions: 4111144, exec/sec: 18.18k
+[32m INFO[0m [Stats #0] run time: 0h-3m-49s, clients: 1, corpus: 78, objectives: 0, executions: 4130349, exec/sec: 18.19k
+[32m INFO[0m [Stats #0] run time: 0h-3m-50s, clients: 1, corpus: 78, objectives: 0, executions: 4149709, exec/sec: 18.19k
+[32m INFO[0m [Stats #0] run time: 0h-3m-51s, clients: 1, corpus: 78, objectives: 0, executions: 4168873, exec/sec: 18.20k
+[32m INFO[0m [Stats #0] run time: 0h-3m-52s, clients: 1, corpus: 78, objectives: 0, executions: 4188010, exec/sec: 18.20k
+[32m INFO[0m [Stats #0] run time: 0h-3m-53s, clients: 1, corpus: 78, objectives: 0, executions: 4207428, exec/sec: 18.21k
+[32m INFO[0m [Stats #0] run time: 0h-3m-54s, clients: 1, corpus: 78, objectives: 0, executions: 4226876, exec/sec: 18.21k
+[32m INFO[0m [Stats #0] run time: 0h-3m-55s, clients: 1, corpus: 78, objectives: 0, executions: 4246328, exec/sec: 18.22k
+[32m INFO[0m [Stats #0] run time: 0h-3m-56s, clients: 1, corpus: 78, objectives: 0, executions: 4265755, exec/sec: 18.22k
+[32m INFO[0m [Stats #0] run time: 0h-3m-57s, clients: 1, corpus: 78, objectives: 0, executions: 4285177, exec/sec: 18.23k
+[32m INFO[0m [Stats #0] run time: 0h-3m-58s, clients: 1, corpus: 78, objectives: 0, executions: 4304605, exec/sec: 18.23k
+[32m INFO[0m [Stats #0] run time: 0h-3m-59s, clients: 1, corpus: 78, objectives: 0, executions: 4324182, exec/sec: 18.24k
+[32m INFO[0m [Stats #0] run time: 0h-4m-0s, clients: 1, corpus: 78, objectives: 0, executions: 4343478, exec/sec: 18.24k
+[32m INFO[0m [Stats #0] run time: 0h-4m-1s, clients: 1, corpus: 78, objectives: 0, executions: 4362778, exec/sec: 18.25k
+[32m INFO[0m [Stats #0] run time: 0h-4m-2s, clients: 1, corpus: 78, objectives: 0, executions: 4381847, exec/sec: 18.25k
+[32m INFO[0m [Stats #0] run time: 0h-4m-3s, clients: 1, corpus: 78, objectives: 0, executions: 4401032, exec/sec: 18.25k
+[32m INFO[0m [Stats #0] run time: 0h-4m-4s, clients: 1, corpus: 78, objectives: 0, executions: 4420191, exec/sec: 18.26k
+[32m INFO[0m [Stats #0] run time: 0h-4m-5s, clients: 1, corpus: 78, objectives: 0, executions: 4439413, exec/sec: 18.26k
+[32m INFO[0m [Stats #0] run time: 0h-4m-6s, clients: 1, corpus: 78, objectives: 0, executions: 4458747, exec/sec: 18.27k
+[32m INFO[0m [Stats #0] run time: 0h-4m-7s, clients: 1, corpus: 78, objectives: 0, executions: 4478164, exec/sec: 18.27k
+[32m INFO[0m [Stats #0] run time: 0h-4m-8s, clients: 1, corpus: 78, objectives: 0, executions: 4497429, exec/sec: 18.27k
+[32m INFO[0m [Stats #0] run time: 0h-4m-9s, clients: 1, corpus: 78, objectives: 0, executions: 4516694, exec/sec: 18.28k
+[32m INFO[0m [Stats #0] run time: 0h-4m-10s, clients: 1, corpus: 78, objectives: 0, executions: 4536073, exec/sec: 18.28k
+[32m INFO[0m [Stats #0] run time: 0h-4m-11s, clients: 1, corpus: 78, objectives: 0, executions: 4555563, exec/sec: 18.29k
+[32m INFO[0m [Stats #0] run time: 0h-4m-12s, clients: 1, corpus: 78, objectives: 0, executions: 4574820, exec/sec: 18.29k
+[32m INFO[0m [Stats #0] run time: 0h-4m-13s, clients: 1, corpus: 78, objectives: 0, executions: 4594112, exec/sec: 18.29k
+[32m INFO[0m [Stats #0] run time: 0h-4m-14s, clients: 1, corpus: 78, objectives: 0, executions: 4613406, exec/sec: 18.30k
+[32m INFO[0m [Stats #0] run time: 0h-4m-15s, clients: 1, corpus: 78, objectives: 0, executions: 4633069, exec/sec: 18.30k
+[32m INFO[0m [Stats #0] run time: 0h-4m-17s, clients: 1, corpus: 78, objectives: 0, executions: 4652435, exec/sec: 18.31k
+[32m INFO[0m [Stats #0] run time: 0h-4m-18s, clients: 1, corpus: 78, objectives: 0, executions: 4671856, exec/sec: 18.31k
+[32m INFO[0m [Stats #0] run time: 0h-4m-19s, clients: 1, corpus: 78, objectives: 0, executions: 4690950, exec/sec: 18.32k
+[32m INFO[0m [Stats #0] run time: 0h-4m-20s, clients: 1, corpus: 78, objectives: 0, executions: 4710395, exec/sec: 18.32k
+[32m INFO[0m [Stats #0] run time: 0h-4m-21s, clients: 1, corpus: 78, objectives: 0, executions: 4729943, exec/sec: 18.32k
+[32m INFO[0m [Stats #0] run time: 0h-4m-22s, clients: 1, corpus: 78, objectives: 0, executions: 4749365, exec/sec: 18.33k
+[32m INFO[0m [Stats #0] run time: 0h-4m-23s, clients: 1, corpus: 78, objectives: 0, executions: 4768789, exec/sec: 18.33k
+[32m INFO[0m [Stats #0] run time: 0h-4m-24s, clients: 1, corpus: 78, objectives: 0, executions: 4788243, exec/sec: 18.34k
+[32m INFO[0m [Stats #0] run time: 0h-4m-25s, clients: 1, corpus: 78, objectives: 0, executions: 4807570, exec/sec: 18.34k
+[32m INFO[0m [Stats #0] run time: 0h-4m-26s, clients: 1, corpus: 78, objectives: 0, executions: 4827151, exec/sec: 18.34k
+[32m INFO[0m [Stats #0] run time: 0h-4m-27s, clients: 1, corpus: 78, objectives: 0, executions: 4846598, exec/sec: 18.35k
+[32m INFO[0m [Stats #0] run time: 0h-4m-28s, clients: 1, corpus: 78, objectives: 0, executions: 4865634, exec/sec: 18.35k
+[32m INFO[0m [Stats #0] run time: 0h-4m-29s, clients: 1, corpus: 78, objectives: 0, executions: 4884801, exec/sec: 18.35k
+[32m INFO[0m [Stats #0] run time: 0h-4m-30s, clients: 1, corpus: 78, objectives: 0, executions: 4904346, exec/sec: 18.36k
+[32m INFO[0m [Stats #0] run time: 0h-4m-31s, clients: 1, corpus: 78, objectives: 0, executions: 4923536, exec/sec: 18.36k
+[32m INFO[0m [Stats #0] run time: 0h-4m-32s, clients: 1, corpus: 78, objectives: 0, executions: 4942864, exec/sec: 18.37k
+[32m INFO[0m [Stats #0] run time: 0h-4m-33s, clients: 1, corpus: 78, objectives: 0, executions: 4962226, exec/sec: 18.37k
+[32m INFO[0m [Stats #0] run time: 0h-4m-34s, clients: 1, corpus: 78, objectives: 0, executions: 4981751, exec/sec: 18.37k
+[32m INFO[0m [Stats #0] run time: 0h-4m-35s, clients: 1, corpus: 78, objectives: 0, executions: 5000856, exec/sec: 18.38k
+[32m INFO[0m [Stats #0] run time: 0h-4m-36s, clients: 1, corpus: 78, objectives: 0, executions: 5020086, exec/sec: 18.38k
+[32m INFO[0m [Stats #0] run time: 0h-4m-37s, clients: 1, corpus: 78, objectives: 0, executions: 5039630, exec/sec: 18.38k
+[32m INFO[0m [Stats #0] run time: 0h-4m-38s, clients: 1, corpus: 78, objectives: 0, executions: 5059054, exec/sec: 18.39k
+[32m INFO[0m [Stats #0] run time: 0h-4m-39s, clients: 1, corpus: 78, objectives: 0, executions: 5078319, exec/sec: 18.39k
+[32m INFO[0m [Stats #0] run time: 0h-4m-40s, clients: 1, corpus: 78, objectives: 0, executions: 5097176, exec/sec: 18.39k
+[32m INFO[0m [Stats #0] run time: 0h-4m-41s, clients: 1, corpus: 78, objectives: 0, executions: 5116538, exec/sec: 18.39k
+[32m INFO[0m [Stats #0] run time: 0h-4m-42s, clients: 1, corpus: 78, objectives: 0, executions: 5135285, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-43s, clients: 1, corpus: 78, objectives: 0, executions: 5154480, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-44s, clients: 1, corpus: 78, objectives: 0, executions: 5173418, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-45s, clients: 1, corpus: 78, objectives: 0, executions: 5192669, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-46s, clients: 1, corpus: 78, objectives: 0, executions: 5211138, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-47s, clients: 1, corpus: 78, objectives: 0, executions: 5230050, exec/sec: 18.41k
+[32m INFO[0m [Stats #0] run time: 0h-4m-48s, clients: 1, corpus: 78, objectives: 0, executions: 5248514, exec/sec: 18.41k
+[32m INFO[0m [Stats #0] run time: 0h-4m-49s, clients: 1, corpus: 78, objectives: 0, executions: 5266015, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-50s, clients: 1, corpus: 78, objectives: 0, executions: 5283380, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-51s, clients: 1, corpus: 78, objectives: 0, executions: 5302606, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-52s, clients: 1, corpus: 78, objectives: 0, executions: 5321828, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-53s, clients: 1, corpus: 78, objectives: 0, executions: 5340670, exec/sec: 18.41k
+[32m INFO[0m [Stats #0] run time: 0h-4m-54s, clients: 1, corpus: 78, objectives: 0, executions: 5358557, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-55s, clients: 1, corpus: 78, objectives: 0, executions: 5377405, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-56s, clients: 1, corpus: 78, objectives: 0, executions: 5395478, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-57s, clients: 1, corpus: 78, objectives: 0, executions: 5413852, exec/sec: 18.40k
+[32m INFO[0m [Stats #0] run time: 0h-4m-58s, clients: 1, corpus: 78, objectives: 0, executions: 5432922, exec/sec: 18.41k
+Timeout

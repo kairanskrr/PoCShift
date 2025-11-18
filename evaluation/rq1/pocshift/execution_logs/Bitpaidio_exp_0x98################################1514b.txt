@@ -1,0 +1,90 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.39s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/Bitpaidio_exp.sol/0x98################################1514b.sol:ContractTest
+[FAIL: revert: BEP20: transfer amount exceeds balance] test() (gas: 412363)
+Traces:
+  [412363] ContractTest::test()
+     [2581] 0x40################################aC019::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 0
+     [0] VM::record()
+         [Return] 
+     [581] 0x40################################aC019::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 0
+     [0] VM::accesses(0x40################################aC019)
+         [Return] [0xb3################################11b90105fdba49ccc7bb4d9c6bc96], []
+     [0] VM::load(0x40################################aC019, 0xb3################################11b90105fdba49ccc7bb4d9c6bc96) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     emit WARNING_UninitedSlot(who: 0x40################################aC019, slot: 81201235000773904770131445719184449197250777359516868712991521815545917127830 [8.12e76])
+     [0] VM::load(0x40################################aC019, 0xb3################################11b90105fdba49ccc7bb4d9c6bc96) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     [581] 0x40################################aC019::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 0
+     [0] VM::store(0x40################################aC019, 0xb3################################11b90105fdba49ccc7bb4d9c6bc96, 0xff################################fffffffffffffffffffffffffffff)
+         [Return] 
+     [581] 0x40################################aC019::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]
+     [0] VM::store(0x40################################aC019, 0xb3################################11b90105fdba49ccc7bb4d9c6bc96, 0x00################################00000000000000000000000000000)
+         [Return] 
+     emit SlotFound(who: 0x40################################aC019, fsig: 0x70a08231, keysHash: 0x5f################################8e09ff7fac17290373c3aa4a1bb03, slot: 81201235000773904770131445719184449197250777359516868712991521815545917127830 [8.12e76])
+     [0] VM::load(0x40################################aC019, 0xb3################################11b90105fdba49ccc7bb4d9c6bc96) [staticcall]
+         [Return] 0x00################################00000000000000000000000000000
+     [0] VM::store(0x40################################aC019, 0xb3################################11b90105fdba49ccc7bb4d9c6bc96, 0x00################################0000000002e72eee0bb30a6340000)
+         [Return] 
+     [581] 0x40################################aC019::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 219349000000000000000000 [2.193e23]
+     [581] 0x40################################aC019::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 219349000000000000000000 [2.193e23]
+     [104181] 0x98################################1514b::Lock_Token(1, 0)
+        [9974] 0x40################################aC019::transferFrom(ContractTest: [0x7F################################e1496], 0x98################################1514b, 0)
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x98################################1514b, value: 0)
+           emit Approval(owner: ContractTest: [0x7F################################e1496], spender: 0x98################################1514b, value: 0)
+            [Return] true
+         [Stop] 
+     [0] VM::warp(1699540893 [1.699e9])
+         [Return] 
+     [22554] 0x40################################aC019::approve(0x98################################1514b, 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+        emit Approval(owner: ContractTest: [0x7F################################e1496], spender: 0x98################################1514b, value: 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77])
+         [Return] true
+     [581] 0x40################################aC019::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 219349000000000000000000 [2.193e23]
+     [48321] 0x98################################1514b::Lock_Token(1, 219349000000000000000000 [2.193e23])
+        [25874] 0x40################################aC019::transferFrom(ContractTest: [0x7F################################e1496], 0x98################################1514b, 219349000000000000000000 [2.193e23])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x98################################1514b, value: 219349000000000000000000 [2.193e23])
+           emit Approval(owner: ContractTest: [0x7F################################e1496], spender: 0x98################################1514b, value: 115792089237316195423570985008687907853269984665640563820108584007913129639935 [1.157e77])
+            [Return] true
+         [Stop] 
+     [4560] 0x98################################1514b::withdraw(1)
+        [854] 0x40################################aC019::transfer(ContractTest: [0x7F################################e1496], 230316450000000000000000 [2.303e23])
+            [Revert] revert: BEP20: transfer amount exceeds balance
+         [Revert] revert: BEP20: transfer amount exceeds balance
+      [Revert] revert: BEP20: transfer amount exceeds balance
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 478.43ms (2.85ms CPU time)
+
+Ran 1 test suite in 481.03ms (478.43ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/Bitpaidio_exp.sol/0x98################################1514b.sol:ContractTest
+[FAIL: revert: BEP20: transfer amount exceeds balance] test() (gas: 412363)
+
+Encountered a total of 1 failing tests, 0 tests succeeded

@@ -1,0 +1,79 @@
+Compiling 25 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.41s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+   --> lib/Common.sol:118:93:
+    |
+118 |     function prepareInitialCapital(address from, address to, uint amount) internal returns (bool) {
+    |                                                                                             ^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+ --> lib/Common.sol:7:5:
+  |
+7 |     function getRouterAndMainToken() internal returns (address, address[] memory){
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> lib/Common.sol:99:5:
+   |
+99 |     function tokenInArray(address token, address[] memory array) internal returns (bool){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 1 test for src/migration_result_test2/BEVO_exp.sol/0xFC################################80849.sol:ContractTest
+[FAIL: revert: SafeMath: subtraction overflow] test() (gas: 193659)
+Traces:
+  [193659] ContractTest::test()
+     [2534] 0xbb################################c095c::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+         [Return] 337000000000000000000 [3.37e20]
+     [120880] 0x10################################6024E::swapExactTokensForTokensSupportingFeeOnTransferTokens(192500000000000000000 [1.925e20], 0, [0xbb################################c095c, 0xFC################################80849], ContractTest: [0x7F################################e1496], 1675071422 [1.675e9])
+        [13025] 0xbb################################c095c::transferFrom(ContractTest: [0x7F################################e1496], 0x5d################################8C36b, 192500000000000000000 [1.925e20])
+           emit Transfer(from: ContractTest: [0x7F################################e1496], to: 0x5d################################8C36b, value: 192500000000000000000 [1.925e20])
+            [Return] true
+        [10251] 0xFC################################80849::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 0
+        [2893] 0x5d################################8C36b::getReserves() [staticcall]
+            [Return] 151761588506413 [1.517e14], 4492984253957017060 [4.492e18], 1646537881 [1.646e9]
+        [534] 0xbb################################c095c::balanceOf(0x5d################################8C36b) [staticcall]
+            [Return] 192500151761588506413 [1.925e20]
+        [79784] 0x5d################################8C36b::swap(0, 4492980702939792925 [4.492e18], ContractTest: [0x7F################################e1496], 0x)
+           [43687] 0xFC################################80849::transfer(ContractTest: [0x7F################################e1496], 4492980702939792925 [4.492e18])
+              emit Transfer(from: 0x5d################################8C36b, to: ContractTest: [0x7F################################e1496], value: 4492980702939792925 [4.492e18])
+               [Return] true
+           [534] 0xbb################################c095c::balanceOf(0x5d################################8C36b) [staticcall]
+               [Return] 192500151761588506413 [1.925e20]
+           [2251] 0xFC################################80849::balanceOf(0x5d################################8C36b) [staticcall]
+               [Return] 3551017224135 [3.551e12]
+           emit Sync(reserve0: 192500151761588506413 [1.925e20], reserve1: 3551017224135 [3.551e12])
+           emit Swap(sender: 0x10################################6024E, amount0In: 192500000000000000000 [1.925e20], amount1In: 0, amount0Out: 0, amount1Out: 4492980702939792925 [4.492e18], to: ContractTest: [0x7F################################e1496])
+            [Stop] 
+        [2251] 0xFC################################80849::balanceOf(ContractTest: [0x7F################################e1496]) [staticcall]
+            [Return] 4492980702939792925 [4.492e18]
+         [Stop] 
+     [27260] 0xFC################################80849::deliver(3028267986646483923 [3.028e18])
+         [Stop] 
+     [22501] 0x5d################################8C36b::skim(ContractTest: [0x7F################################e1496])
+        [534] 0xbb################################c095c::balanceOf(0x5d################################8C36b) [staticcall]
+            [Return] 192500151761588506413 [1.925e20]
+        [3262] 0xbb################################c095c::transfer(ContractTest: [0x7F################################e1496], 0)
+           emit Transfer(from: 0x5d################################8C36b, to: ContractTest: [0x7F################################e1496], value: 0)
+            [Return] true
+        [2251] 0xFC################################80849::balanceOf(0x5d################################8C36b) [staticcall]
+            [Return] 3561803319100 [3.561e12]
+        [8987] 0xFC################################80849::transfer(ContractTest: [0x7F################################e1496], 10786094965 [1.078e10])
+           emit Transfer(from: 0x5d################################8C36b, to: ContractTest: [0x7F################################e1496], value: 10786094965 [1.078e10])
+            [Return] true
+         [Stop] 
+     [3928] 0xFC################################80849::deliver(4544947785463603859 [4.544e18])
+         [Revert] revert: SafeMath: subtraction overflow
+      [Revert] revert: SafeMath: subtraction overflow
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 994.60ms (2.69ms CPU time)
+
+Ran 1 test suite in 3.14s (994.60ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in src/migration_result_test2/BEVO_exp.sol/0xFC################################80849.sol:ContractTest
+[FAIL: revert: SafeMath: subtraction overflow] test() (gas: 193659)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
