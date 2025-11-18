@@ -7,9 +7,7 @@ with open(os.path.join(os.path.dirname(__file__), "requirements.txt",),'r',encod
 
 setup(
     name="pocshift",
-    version="0.0.1",
-    author="pocshift-ccs25",
-    maintainer="pocshift-ccs25",
+    author="Kairan Sun",
     packages=["pocshift"] + find_packages(),
     install_requires=dependencies,
     entry_points={
