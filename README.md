@@ -1,4 +1,25 @@
-# ✨PoCShift
+# ✨ Learning from the Past: Real-World Exploit Migration for Smart Contract PoC Generation
+
+[![ASE 2025](https://img.shields.io/badge/ASE-2025-blue?style=flat-square)](https://conf.researchr.org/home/ase-2025)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Paper PDF](https://img.shields.io/badge/Paper-PDF-orange?style=flat-square)](./full_paper/Learning%20from%20the%20Past%20Real-World%20Exploit%20Migration%20for%20Smart.pdf)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-green?style=flat-square)](https://www.python.org/downloads/)
+
+
+
+## 📑 Table of Contents
+
+- [Overview](#-overview)
+- [Quick Start](#-quick-start)
+- [Usage Examples](#-usage-examples)
+- [Evaluation & Data](#-evaluation--data)
+- [Project Structure](#-project-structure)
+- [Citation](#-citation)
+- [Ethical Considerations](#-ethical-considerations)
+
+---
+
+## 🔍 Overview
 
 PoCShift is a migration-based PoC generation work that leverages existing PoCs to generate PoCs for contracts with similar vulnerabilities. It achieves both high precision and efficiency through a novel three-phase approach:
 
@@ -6,20 +27,95 @@ PoCShift is a migration-based PoC generation work that leverages existing PoCs t
 2. **Candidate Matching**: Identifies contracts with similar vulnerable patterns.
 3. **Migration Testing**: Generates and validates new PoCs in simulated environments.
 
-## About This Repository
+---
 
-This repository contains the **supplementary materials and evaluation artifacts** for our research paper on PoCShift. This repository is intended to support the reproducibility and verification of our research findings.
+## 🚀 Quick Start
 
-### Evaluation
+### Prerequisites
+- Python 3.10+ (tested on Windows 11)
+- `pip` plus a virtual environment tool (`venv` or `conda`)
+- Optional: [Foundry](https://book.getfoundry.sh/getting-started/installation) for replaying motivator traces
 
-Our evaluation dataset and results are available under ``\evaluation`` folder:
+### Environment Setup
 
-* ``\rq1``: In this folder, we provide the evaluation results for our tool and selected SOTA over the evaluation dataset. Among the results, ``\execution_logs`` contains the detailed execution logs for each tool while ``\reported`` contains the reported vulnerabilities by each tool.
-* ``\rq2``: In this folder, we provide execution logs and scripts to conduct the ablative study for PoCShift.
-* ``\rq3``: In this folder, we provide the execution logs for the rest successfully validated vulnerable contracts.
+```bash
+git clone https://github.com/kairanskrr/PoCShift.git
+cd PoCShift
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS/Linux
+source .venv/bin/activate
+pip install -r requirement.txt
+```
 
-### Source Code Availability
+> `setup.py` exposes the partial modules as a package, so you can also run `pip install -e .` if you need editable imports.
 
-Due to ethical considerations, **the complete source code of PoCShift will not be publicly released**. As PoCShift is designed to automatically generate Proof-of-Concept exploits for vulnerable smart contracts, unrestricted public access to the full implementation could potentially facilitate malicious activities and irresponsible vulnerability exploitation. The ``\pocshift`` folder contains a partial implementation for research transparency and reproducibility purposes.
+### Local Validation
 
-For access requests or inquiries, please contact the authors through the contact information provided in our paper. Thank you!
+- Inspect the **Onyx case study** under `motivating_example/` and replay the invocation trace with Foundry or your preferred tooling.
+- Use the notebooks/scripts in `evaluation/rq2` and `evaluation/rq3` to reproduce oracle checks, template statistics, and successful-case aggregations.
+- The partial `pocshift` package contains helper utilities (parser, abstraction, candidate matching) that can be invoked from custom research scripts.
+
+---
+
+## 🧪 Usage Examples
+
+- **PoC abstraction sandbox**: call `AbstractedPoC` from `pocshift.poc_abstraction.poc_abstraction` with a PoC path plus metadata to obtain migratable signatures and ABI summaries.
+- **Condition translation**: explore `pocshift/poc_abstraction/condition_translation` to see how environment pre/post conditions are normalized into reusable constraints.
+- **Template analytics**: run `python evaluation/rq2/test_oracle.py` (adjusting paths at the bottom of the script) to regenerate vulnerability-type summaries used in RQ2.
+- **Cross-tool comparison**: `evaluation/rq1` hosts PoCShift vs. ItyFuzz/Mythril logs so you can re-score true/false positives for your custom metrics.
+
+---
+
+## 📈 Evaluation & Data
+
+- **RQ1 – PoC generation capability**: aggregated TP/FP/FN counts, execution logs, and reported-contract folders for PoCShift and baselines (`evaluation/rq1`).
+- **RQ2 – Ablation / oracle quality**: scripts for trimming PoCs, extracting successful runs, and grouping by vulnerability type (`evaluation/rq2`).
+- **RQ3 – Successful migration cases**: execution traces for the remaining validated vulnerable contracts (`evaluation/rq3`).
+- **Motivating example**: detailed walkthrough of the Onyx Protocol exploit, including invocation traces and Algorithm 1 explanation (`motivating_example/README.md`).
+
+Each folder keeps raw logs (`execution_logs/`) plus curated reports to ensure end-to-end reproducibility.
+
+---
+
+## 🗂️ Project Structure
+
+```
+PoCShift/
+├── pocshift/                # Partial implementation (abstraction, matching, parsers)
+├── evaluation/              # RQ1–RQ3 datasets, logs, scripts
+├── motivating_example/      # Algorithm 1 case study & traces
+├── full_paper/              # Camera-ready / preprint PDF
+├── requirement.txt          # Python dependencies
+├── setup.py                 # Editable install for partial modules
+└── README.md                # You are here
+```
+
+---
+
+## 📚 Paper & Citation
+
+**Paper**: *Learning from the Past: Real-World Exploit Migration for Smart Contract PoC Generation*  
+**PDF**: [`full_paper/Learning from the Past Real-World Exploit Migration for Smart.pdf`](./full_paper/Learning%20from%20the%20Past%20Real-World%20Exploit%20Migration%20for%20Smart.pdf)
+
+```bibtex
+@article{pocshift2025,
+  title     = {Learning from the Past: Real-World Exploit Migration for Smart Contract PoC Generation},
+  author={Sun, Kairan and Xu, Zhengzi and Li, Kaixuan and Zhang, Lyuye and Wu, Daoyuan and Feng, Yebo and Liu, Yang},
+  booktitle={Proceedings of the 40th IEEE/ACM International Conference on Automated Software Engineering},
+  year={2025},
+  series={ASE '25},
+  publisher={IEEE},
+}
+```
+
+---
+
+## 🔐 Ethical Considerations
+
+Due to ethical considerations, **the complete artifact** are not publicly released. The material here focuses on transparency for reviewers and researchers while preventing irresponsible use of automated exploit generation.
+
+If you need the complete artifact, please send us an email (kairan.sun@ntu.edu.sg) with the purpose. Thanks for understanding.
+
+In the email, please include a justification letter (PDF format) on official letterhead. The justification letter needs to acknowledge the "PoCShift" project from Nanyang Technological University and clearly state the reason for requesting the artifacts. Also, confirm that the shared resources **will not be redistributed without our permission**. We emphasize that we will ignore emails that do not follow the above instructions.
