@@ -1,7 +1,6 @@
 # ✨ Learning from the Past: Real-World Exploit Migration for Smart Contract PoC Generation
 
 [![ASE 2025](https://img.shields.io/badge/ASE-2025-blue?style=flat-square)](https://conf.researchr.org/home/ase-2025)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Paper PDF](https://img.shields.io/badge/Paper-PDF-orange?style=flat-square)](./full_paper/Learning%20from%20the%20Past%20Real-World%20Exploit%20Migration%20for%20Smart.pdf)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-green?style=flat-square)](https://www.python.org/downloads/)
 
@@ -46,25 +45,8 @@ python -m venv .venv
 .venv\Scripts\activate
 # macOS/Linux
 source .venv/bin/activate
-pip install -r requirement.txt
+pip install -e .
 ```
-
-> `setup.py` exposes the partial modules as a package, so you can also run `pip install -e .` if you need editable imports.
-
-### Local Validation
-
-- Inspect the **Onyx case study** under `motivating_example/` and replay the invocation trace with Foundry or your preferred tooling.
-- Use the notebooks/scripts in `evaluation/rq2` and `evaluation/rq3` to reproduce oracle checks, template statistics, and successful-case aggregations.
-- The partial `pocshift` package contains helper utilities (parser, abstraction, candidate matching) that can be invoked from custom research scripts.
-
----
-
-## 🧪 Usage Examples
-
-- **PoC abstraction sandbox**: call `AbstractedPoC` from `pocshift.poc_abstraction.poc_abstraction` with a PoC path plus metadata to obtain migratable signatures and ABI summaries.
-- **Condition translation**: explore `pocshift/poc_abstraction/condition_translation` to see how environment pre/post conditions are normalized into reusable constraints.
-- **Template analytics**: run `python evaluation/rq2/test_oracle.py` (adjusting paths at the bottom of the script) to regenerate vulnerability-type summaries used in RQ2.
-- **Cross-tool comparison**: `evaluation/rq1` hosts PoCShift vs. ItyFuzz/Mythril logs so you can re-score true/false positives for your custom metrics.
 
 ---
 
@@ -115,4 +97,4 @@ If you use our work in your research, please kindly cite us as:
 
 Due to ethical considerations, **the complete artifact** are not publicly released. The material here focuses on transparency for reviewers and researchers while preventing irresponsible use of automated exploit generation. 
 
-If you need the complete artifact, please send us an email (kairan.sun@ntu.edu.sg) with the purpose. Thanks for understanding. In the email, please include a justification letter (PDF format) on official letterhead. The justification letter needs to acknowledge the "PoCShift" project from Nanyang Technological University and clearly state the reason for requesting the artifacts. Also, confirm that the shared resources **will not be redistributed without our permission**. We emphasize that we will ignore emails that do not follow the above instructions.
+If you need the complete artifact, please send us an email with the purpose. Thanks for understanding. In the email, please include a justification letter (PDF format) on official letterhead. The justification letter needs to acknowledge the "PoCShift" project from Nanyang Technological University and clearly state the reason for requesting the artifacts. Also, confirm that the shared resources **will not be redistributed without our permission**. We emphasize that we will ignore emails that do not follow the above instructions.
